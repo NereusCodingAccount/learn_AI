@@ -44,6 +44,12 @@ layer = MaxPooling2D(pool_size=(2,2))
 ---
 
 - **Dropout (隨機丟棄層)**：訓練時隨機丟棄神經元，做正則化（無參數），防止模型過度學習。
+```python
+from tensorflow.keras.layers import Dropout
+
+layer = Dropout(0.5)
+```
+---
 
 - ### 中高階層:
 
@@ -124,12 +130,7 @@ ln = LayerNormalization()
 
 
 
-```python
-from tensorflow.keras.layers import Dropout
 
-layer = Dropout(0.5)
-```
----
 
 ### 輸入/輸出形狀（shape）觀念
 
