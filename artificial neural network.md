@@ -6,25 +6,53 @@
 
 ### 層（Layer）是神經網路中的基本運算單元，用來把輸入轉換成輸出，並逐層抽取或組合特徵。簡要說明：
 
+- 可以想像神經網路就像是一個「多層的數學函數」，每一層都會**接收輸入** → **做運算** → **傳出結果**。
+
 ### 基本數學形式
 
 許多層可表示為 y = f(Wx + b)（可訓練參數 W, b；f 為啟動函數）。
 有些層是無參數的（例如 MaxPool、Flatten、Activation 若單獨算作層）。
 常見層類型（用途與特性）
 
-- **Dense / Fully‑connected**：每個輸入連到每個輸出；適合表格資料、分類/回歸。
+- **Dense / Fully‑connected(全連接層)**：最基本的層，每個輸入連到每個輸出；適合**表格資料、分類/回歸**。
 
-- **Convolution（Conv）**：用卷積核在局部窗口計算，保留空間結構，常用於影像。
+```python
+from tensorflow.keras.layers import Dense
 
-- **Recurrent（RNN / LSTM / GRU）**：處理序列，保留時間狀態（hidden state）。
+layer = Dense(units=64, activation='relu')
+```
+---
+
+- **Convolution（Conv）(卷積層)**：用卷積核在局部窗口計算，保留空間結構，**常用於影像**。
+
+```python
+from tensorflow.keras.layers import Conv2D
+
+layer = Conv2D(filters=32, kernel_size=(3,3), activation='relu')
+```
+---
+
+- **Recurrent（RNN / LSTM / GRU）(池化層)**：處理序列，保留時間狀態（hidden state）。
 
 - **Attention / Self‑Attention**：以注意力機制建模序列中元素間的關聯（Transformer）。
 
 - **Normalization（BatchNorm / LayerNorm）**：標準化激活值，穩定訓練、加速收斂（有時有可學參數）。
 
-- **Pooling（MaxPool / AvgPool）**：空間下採樣，減少尺寸與平移不變性。
+- **Pooling（MaxPool / AvgPool）(池化層)**：空間下採樣，減少尺寸與平移不變性。ex: **MaxPooling（取最大值）、AveragePooling（取平均值）**
 
-- **Dropout**：訓練時隨機丟棄神經元，做正則化（無參數）。
+```python
+from tensorflow.keras.layers import MaxPooling2D
+
+layer = MaxPooling2D(pool_size=(2,2))
+```
+
+- **Dropout (隨機丟棄層)**：訓練時隨機丟棄神經元，做正則化（無參數），防止模型過度學習。
+
+```python
+from tensorflow.keras.layers import Dropout
+
+layer = Dropout(0.5)
+```
 
 ### 輸入/輸出形狀（shape）觀念
 
