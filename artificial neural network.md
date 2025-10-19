@@ -4,9 +4,9 @@
 
 ## 層（Layer）：Dense/Linear、Conv、RNN、Self-Attention。
 
-## 層（Layer）是神經網路中的基本運算單元，用來把輸入轉換成輸出，並逐層抽取或組合特徵。簡要說明：
+### 層（Layer）是神經網路中的基本運算單元，用來把輸入轉換成輸出，並逐層抽取或組合特徵。簡要說明：
 
-## 基本數學形式
+### 基本數學形式
 
 許多層可表示為 y = f(Wx + b)（可訓練參數 W, b；f 為啟動函數）。
 有些層是無參數的（例如 MaxPool、Flatten、Activation 若單獨算作層）。
@@ -26,11 +26,13 @@
 
 - **Dropout**：訓練時隨機丟棄神經元，做正則化（無參數）。
 
-## 輸入/輸出形狀（shape）觀念
+### 輸入/輸出形狀（shape）觀念
 
-**Dense**：輸入 (batch, in_dim) → 輸出 (batch, out_dim)。
-**Conv2D**：輸入 (batch, C, H, W) → 輸出 (batch, C_out, H', W')（依 kernel、stride、padding 決定 H', W'）。
-**RNN**：輸入 (seq_len, batch, feature) 或 (batch, seq_len, feature) → 輸出含時間維度。
+- **Dense**：輸入 (batch, in_dim) → 輸出 (batch, out_dim)。
+
+- **Conv2D**：輸入 (batch, C, H, W) → 輸出 (batch, C_out, H', W')（依 kernel、stride、padding 決定 H', W'）。
+
+- **RNN**：輸入 (seq_len, batch, feature) 或 (batch, seq_len, feature) → 輸出含時間維度。
 層的角色與設計要點
 
 每層學到不同層次的表示（淺層學局部/低階特徵，深層學抽象/高階特徵）。
