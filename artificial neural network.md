@@ -4,9 +4,9 @@
 
 ## 層（Layer）：Dense/Linear、Conv、RNN、Self-Attention。
 
-# 層（Layer）是神經網路中的基本運算單元，用來把輸入轉換成輸出，並逐層抽取或組合特徵。簡要說明：
+## 層（Layer）是神經網路中的基本運算單元，用來把輸入轉換成輸出，並逐層抽取或組合特徵。簡要說明：
 
-# 基本數學形式
+## 基本數學形式
 
 許多層可表示為 y = f(Wx + b)（可訓練參數 W, b；f 為啟動函數）。
 有些層是無參數的（例如 MaxPool、Flatten、Activation 若單獨算作層）。
@@ -37,12 +37,12 @@
 層的順序與種類決定網路能力與計算量（例如 Conv→Pool→Conv→Flatten→Dense）。
 小心參數數量（過多會過擬合、過少表達力不足）；搭配正則化與適當深度。  
 
-# 啟動函數：ReLU、Sigmoid、Tanh、GELU。  
+## 啟動函數：ReLU、Sigmoid、Tanh、GELU。  
 
-# 損失函數：分類→Cross-Entropy，回歸→MSE。  
-# 優化器：SGD、Adam（常用）。  
-# 正則化：Dropout、BatchNorm/LayerNorm、L2（權重衰減）。  
-# 評估指標：Accuracy、F1、ROC-AUC、MAE/MSE。
+## 損失函數：分類→Cross-Entropy，回歸→MSE。  
+## 優化器：SGD、Adam（常用）。  
+## 正則化：Dropout、BatchNorm/LayerNorm、L2（權重衰減）。  
+## 評估指標：Accuracy、F1、ROC-AUC、MAE/MSE。
 
 ## 常見架構（用途與重點）
 - MLP（多層感知器）：表格資料、簡單分類/回歸。  
@@ -62,6 +62,7 @@
 - 分訓練/驗證/測試集，確保評估可靠性。
 
 ## 簡短範例（PyTorch）
+
 ```python
 import torch
 import torch.nn as nn
@@ -106,4 +107,3 @@ class SimpleTransformerEncoder(nn.Module):
 
 ---
 
-需要我把某一部分（例如完整訓練迴圈、資料載入或 Keras 範例）補到檔案裡嗎？
