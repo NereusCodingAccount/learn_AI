@@ -14,6 +14,8 @@
 有些層是無參數的（例如 MaxPool、Flatten、Activation 若單獨算作層）。
 常見層類型（用途與特性）
 
+- ### 基礎結構層:
+
 - **Dense / Fully‑connected(全連接層)**：最基本的層，每個輸入連到每個輸出；適合**表格資料、分類/回歸**。
 
 ```python
@@ -32,10 +34,23 @@ layer = Conv2D(filters=32, kernel_size=(3,3), activation='relu')
 ```
 ---
 
+- **Pooling（MaxPool / AvgPool）(池化層)**：空間下採樣，減少尺寸與平移不變性。ex: **MaxPooling（取最大值）、AveragePooling（取平均值）**
+
+```python
+from tensorflow.keras.layers import MaxPooling2D
+
+layer = MaxPooling2D(pool_size=(2,2))
+```
+---
+
+- **Dropout (隨機丟棄層)**：訓練時隨機丟棄神經元，做正則化（無參數），防止模型過度學習。
+
+- ### 中高階層:
+
 - **Recurrent（RNN / LSTM / GRU）(循環層)**：
  用來處理「序列資料」的層，例如**文字、時間序列、語音**。
  
- - 普通的Dense只看**當前輸入** = 沒有記憶，但語句有順序的，這就靠「hidden state」來實現
+- 普通的Dense只看**當前輸入** = 沒有記憶，但語句有順序的，這就靠「hidden state」來實現
 
 🔹 RNN / LSTM / GRU 差異
 
@@ -55,7 +70,7 @@ lstm = LSTM(128, return_sequences=False)# False → 只輸出最後一個（常�
 # GRU
 gru = GRU(128, return_sequences=True)
 ```
----
+
 
 - **Attention / Self‑Attention**：以注意力機制建模序列中元素間的關聯（Transformer）。
 用於建模序列中「元素彼此間的關聯性」。
@@ -86,18 +101,28 @@ output = attn(query=x, value=x, key=x)  # self-attention
 
 - **Normalization（BatchNorm / LayerNorm）**： **✨標準化激活值**
 
-- 1. 
-
-- **Pooling（MaxPool / AvgPool）(池化層)**：空間下採樣，減少尺寸與平移不變性。ex: **MaxPooling（取最大值）、AveragePooling（取平均值）**
-
+- 1.**Batch Normalization**
+在 小批次資料（batch） 維度上標準化，通常用於**CNN、MLP**
 ```python
-from tensorflow.keras.layers import MaxPooling2D
+from tensorflow.keras.layers import BatchNormalization
 
-layer = MaxPooling2D(pool_size=(2,2))
+bn = BatchNormalization()
 ```
+
+
+- 2.**Layer Normalization**
+在 特徵維度 上標準化（不依賴 batch 大小），更適合 **Transformer、RNN**。
+```python
+from tensorflow.keras.layers import LayerNormalization
+
+ln = LayerNormalization()
+```
+- BatchNorm，對整個 batch 的輸入平均，用在:**CNN、MLP**
+- LayerNorm，對每個樣本的所有特徵平均，用在:**Transformer、RNN**
+
 ---
 
-- **Dropout (隨機丟棄層)**：訓練時隨機丟棄神經元，做正則化（無參數），防止模型過度學習。
+
 
 ```python
 from tensorflow.keras.layers import Dropout
