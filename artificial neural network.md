@@ -1,6 +1,6 @@
 # 神經網路架構速覽
 
-#### 主要元件（簡潔）####
+# 主要元件（簡潔）
 
 ## 層（Layer）：Dense/Linear、Conv、RNN、Self-Attention。
 
@@ -32,11 +32,61 @@ layer = Conv2D(filters=32, kernel_size=(3,3), activation='relu')
 ```
 ---
 
-- **Recurrent（RNN / LSTM / GRU）(池化層)**：處理序列，保留時間狀態（hidden state）。
+- **Recurrent（RNN / LSTM / GRU）(循環層)**：
+ 用來處理「序列資料」的層，例如**文字、時間序列、語音**。
+ 
+ - 普通的Dense只看**當前輸入** = 沒有記憶，但語句有順序的，這就靠「hidden state」來實現
+
+🔹 RNN / LSTM / GRU 差異
+
+RNN	最基本，會記錄前一個 hidden state，缺點是:**容易「梯度消失」**
+LSTM，加入「記憶單元」（cell state），能長期記憶，缺點是:**結構較複雜**
+GRU，LSTM 的簡化版本，效能相近、速度更快，缺點是:**少一個門(no cell state)**
+
+```python
+from tensorflow.keras.layers import SimpleRNN, LSTM, GRU
+
+# RNN
+rnn = SimpleRNN(64, activation='tanh', return_sequences=True)# return_sequences=True → 表示輸出每個時間步的結果
+
+# LSTM
+lstm = LSTM(128, return_sequences=False)# False → 只輸出最後一個（常用於分類）
+
+# GRU
+gru = GRU(128, return_sequences=True)
+```
+---
 
 - **Attention / Self‑Attention**：以注意力機制建模序列中元素間的關聯（Transformer）。
+用於建模序列中「元素彼此間的關聯性」。
+是 **Transformer（GPT、BERT 等）**的關鍵技術。
 
-- **Normalization（BatchNorm / LayerNorm）**：標準化激活值，穩定訓練、加速收斂（有時有可學參數）。
+#### RNN 雖然能記住前文，但記憶會「衰退」；Attention 可以直接「比較序列中所有位置」
+- #### 核心概念:
+  每個輸出產生三個向量: **QKV**
+    Q（Query）：我要關注什麼
+    K（Key）：我能提供什麼資訊
+    V（Value）：實際資訊內容
+    ![alt text](image.png)
+
+當 Q, K, V 都來自同一組輸入時 → **Self-Attention**
+這讓模型能自己「看整句話」Ex:“The **animal** didn’t cross the street because **it** was too tired.”
+模型會知道 “it” 指的是 “animal”，因為注意力讓每個詞都能「關注」句中其他詞。
+
+#### 多頭注意力（Multi-Head Attention）
+用多組(Q,K,V)進行
+```python
+from tensorflow.keras.layers import MultiHeadAttention
+
+attn = MultiHeadAttention(num_heads=8, key_dim=64)
+output = attn(query=x, value=x, key=x)  # self-attention
+```
+---
+
+
+- **Normalization（BatchNorm / LayerNorm）**： **✨標準化激活值**
+
+- 1. 
 
 - **Pooling（MaxPool / AvgPool）(池化層)**：空間下採樣，減少尺寸與平移不變性。ex: **MaxPooling（取最大值）、AveragePooling（取平均值）**
 
@@ -45,6 +95,7 @@ from tensorflow.keras.layers import MaxPooling2D
 
 layer = MaxPooling2D(pool_size=(2,2))
 ```
+---
 
 - **Dropout (隨機丟棄層)**：訓練時隨機丟棄神經元，做正則化（無參數），防止模型過度學習。
 
@@ -53,6 +104,7 @@ from tensorflow.keras.layers import Dropout
 
 layer = Dropout(0.5)
 ```
+---
 
 ### 輸入/輸出形狀（shape）觀念
 
