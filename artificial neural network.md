@@ -38,6 +38,7 @@
 小心參數數量（過多會過擬合、過少表達力不足）；搭配正則化與適當深度。  
 
 # 啟動函數：ReLU、Sigmoid、Tanh、GELU。  
+
 # 損失函數：分類→Cross-Entropy，回歸→MSE。  
 # 優化器：SGD、Adam（常用）。  
 # 正則化：Dropout、BatchNorm/LayerNorm、L2（權重衰減）。  
