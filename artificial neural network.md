@@ -16,12 +16,17 @@
 
 - ### 基礎結構層:
 
-- **Dense / Fully‑connected(全連接層)**：最基本的層，每個輸入連到每個輸出；適合**表格資料、分類/回歸**。
+- **Dense / Fully‑connected(全連接層)**：最基本的層，把上一層的所有輸入節點都連接到本層的每個神經元。；適合**表格資料、分類/回歸**。
+
+  - 特徵混合度高（每個輸出都看到全部輸入）
+  - 參數量大（weights = input × output）
+  - 通常用在 **CNN** 的尾端進行分類。
 
 ```python
 from tensorflow.keras.layers import Dense
 
-layer = Dense(units=64, activation='relu')
+layer = Dense(128, activation='relu')# 建立128個神經元的全連接層
+
 ```
 ---
 
@@ -31,6 +36,7 @@ layer = Dense(units=64, activation='relu')
 from tensorflow.keras.layers import Conv2D
 
 layer = Conv2D(filters=32, kernel_size=(3,3), activation='relu')
+# 產生 32 張特徵圖，每個卷積核大小 3×3
 ```
 ---
 
