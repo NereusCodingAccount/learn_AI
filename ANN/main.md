@@ -11,8 +11,8 @@
 
 ## 常見架構類型（用途）
 - MLP（多層感知器）：表格資料、簡單分類/回歸。  
-- CNN（卷積神經網路）：影像、視覺特徵提取。  
-- RNN / LSTM / GRU：序列資料（文字、時間序列、語音）。  
+- 前往[CNN](./CNN.md)（卷積神經網路）：影像、視覺特徵提取。  
+- 前往[RNN](./RNN.md) / 前往[LSTM](./LSTM.md) / 前往[GRU](./GRU.md)：序列資料（文字、時間序列、語音）。  
 - Transformer（Self‑Attention 為核心）：NLP、序列建模與大型預訓練模型。  
 - Autoencoder / GAN / GNN：降維、生成式建模、圖資料處理。
 
