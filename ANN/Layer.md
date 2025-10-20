@@ -12,9 +12,39 @@
   - **特殊層**
 
 <details>
-<summary>點我展開內容</summary>
+<summary>隱藏層的詳細介紹</summary>
 
-這是隱藏的內容！
+# Dence / Fully‑connected(全連接層)：
+- 最基本的層，把上一層的所有輸入節點都連接到本層的每個神經元；適合**表格資料、分類/回歸**。
+- 它會對輸入資料進行加權線性組合，再加上一個偏差項（bias），公式如下：
+### y(輸出) = W(權重矩陣)∙x(輸入) + b(偏差向)
+- **特點**:有更高的靈活度和學習能力，通常需要硬體(ex:GPU)來提升運算速度。
+
+```python
+from tensorflow.keras.layers import Dense
+
+layer = Dense(128, activation='relu')# 建立128個神經元的全連接層
+
+```
+---
+# Convolution / Conv(卷積層)
+- 深度學習中**圖像處理**任務的重要核心。
+
+- 卷積層的主要作用是利用「卷積核」或「濾波器」在輸入資料（如影像）上滑動，提取區域性特徵，例如邊緣、顏色或紋理。每個卷積核會學習一組權重，能針對不同圖像特徵有不同的敏感度。
+
+- 卷積層的關鍵參數:
+  - kernel size（卷積核大小）
+  - stride（步長）
+  - padding（填補法，有「valid」與「same」兩種）
+  - filter/深度數量
+
+  ```python
+from tensorflow.keras.layers import Conv2D
+
+layer = Conv2D(filters=32, kernel_size=(3,3), activation='relu')
+# 產生 32 張特徵圖，每個卷積核大小 3×3
+```
+---
 
 </details>
 
@@ -22,5 +52,6 @@
   - **功能**：輸出最終預測結果。
   - **作用**：根據任務（分類、回歸等）生成結果，如分類概率或回歸值。
   - 節點數量通常和輸出類別數對應。
+
 
 ##
