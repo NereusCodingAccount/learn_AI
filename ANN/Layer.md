@@ -38,7 +38,7 @@ layer = Dense(128, activation='relu')# 建立128個神經元的全連接層
   - padding（填補法，有「valid」與「same」兩種）
   - filter/深度數量
 
-  ```python
+```python
 from tensorflow.keras.layers import Conv2D
 
 layer = Conv2D(filters=32, kernel_size=(3,3), activation='relu')
