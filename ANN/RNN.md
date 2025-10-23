@@ -33,4 +33,4 @@
 
 [GRU](./GRU.md) 遞迴神經網路
 
-<details>
+</details>
