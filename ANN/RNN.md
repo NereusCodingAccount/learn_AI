@@ -30,6 +30,7 @@
 <summary>延伸閱讀</summary>
 
 [LSTM](./LSTM.md) 長短期記憶網路
+
 [GRU](./GRU.md) 遞迴神經網路
 
 <details>
