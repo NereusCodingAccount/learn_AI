@@ -31,4 +31,3 @@
 4. 訓練、驗證並調整超參數（lr、batch size、層數）。  
 5. 儲存 checkpoint，轉為推理/部署（注意切換 model.eval()）。
 
-需要更具體的範例（例如給定任務設計一個 CNN/Transformer 架構）嗎？
