@@ -12,4 +12,19 @@
   - 輸出門（Output Gate）：決定要從細胞狀態中輸出哪些資訊，作為當前序列的結果
   - 細胞狀態（Cell State）：像一條資訊通道，負責保存、傳遞和更新整個序列過程中的重要記憶
   ![alt text](./LSTM_Gates.png)
-{\displaystyle {\begin{aligned}f_{t}&=\sigma _{g}(W_{f}x_{t}+U_{f}h_{t-1}+b_{f})\\i_{t}&=\sigma _{g}(W_{i}x_{t}+U_{i}h_{t-1}+b_{i})\\o_{t}&=\sigma _{g}(W_{o}x_{t}+U_{o}h_{t-1}+b_{o})\\c_{t}&=f_{t}\circ c_{t-1}+i_{t}\circ \sigma _{c}(W_{c}x_{t}+U_{c}h_{t-1}+b_{c})\\h_{t}&=o_{t}\circ \sigma _{h}(c_{t})\end{aligned}}}
+
+## 方程
+![alt text](./LSTM_equation.png)
+
+
+![alt text](./LSTM_variable.png)
+![alt text](./LSTM_Gates_annotation.png)
+
+### Activation Function 激活函數
+![alt text](./LSTM_AF.png)
+
+## Peephole LSTM 窺孔LSTM
+- Peephole connections allow the gates to access the **constant error carousel (CEC) 恆定誤差輪播**, whose activation is the cell state.
+
+![alt text](./P_LSTM_equation.png)
+![alt text](./P_LATM_Gates.png)
