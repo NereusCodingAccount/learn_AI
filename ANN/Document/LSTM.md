@@ -55,7 +55,7 @@ The **"*"** denotes the **convolution operator 卷積算子**
 ### Alternatives 替代方案
 **Neuroevolution 神經進化** or **policy gradient methods 策略梯度方法**
 
-<detail>
+<details>
 <summary> 延伸閱讀:Neuroevolution 神經進化 </summary>
 
 # 加碼 : Neuroevolution 神經進化
