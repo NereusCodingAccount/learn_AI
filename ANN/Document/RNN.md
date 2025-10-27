@@ -34,3 +34,5 @@
 [GRU](./GRU.md) 閘門神經網路
 
 </details>
+
+# [返回](../main.md)
