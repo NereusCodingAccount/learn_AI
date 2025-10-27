@@ -1,4 +1,4 @@
-# 循環神經網路（Recurrent neural network：RNN）
+# 循環/遞迴神經網路（Recurrent neural network：RNN）
 ##### RNN是神經網路的一種。是在機器學習領域用來處理「序列資料」的深度學習模型
 
 ## 核心想法
@@ -29,8 +29,8 @@
 <details>
 <summary>延伸閱讀</summary>
 
-[LSTM](./LSTM.md) 長短期記憶網路
+[LSTM](./LSTM.md) 長短期記憶神經網路
 
-[GRU](./GRU.md) 遞迴神經網路
+[GRU](./GRU.md) 閘門神經網路
 
 </details>
