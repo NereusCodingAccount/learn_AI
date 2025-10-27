@@ -13,7 +13,7 @@
   - 細胞狀態（Cell State）：像一條資訊通道，負責保存、傳遞和更新整個序列過程中的重要記憶
   ![alt text](./LSTM_Gates.png)
 
-## 方程
+## Equation 方程
 ![alt text](./LSTM_equation.png)
 
 
