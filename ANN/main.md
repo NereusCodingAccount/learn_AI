@@ -31,3 +31,5 @@
 4. 訓練、驗證並調整超參數（lr、batch size、層數）。  
 5. 儲存 checkpoint，轉為推理/部署（注意切換 model.eval()）。
 
+## Reference
+1. https://en.wikipedia.org/wiki/Neural_network_(machine_learning)
