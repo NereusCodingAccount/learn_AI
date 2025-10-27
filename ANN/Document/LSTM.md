@@ -44,7 +44,7 @@ The **"*"** denotes the **convolution operator 卷積算子**
 ---
 
 ## Training 訓練
-- 使用 LSTM 單元的 RNN 可以在一組訓練序列上以監督方式進行訓練，使用梯度下降等優化演算法結合時間反向傳播來計算最佳化過程中所需的梯度，以便根據誤差（在 LSTM 網路的輸出層）相對於相應權重的導數比例改變 LSTM 網路的每個權重
+- 使用 LSTM 單元的 RNN 可以在一組訓練序列上以監督方式進行訓練，使用**梯度下降**等優化演算法結合**時間反向傳播**來計算最佳化過程中所需的梯度，以便根據誤差（在 LSTM 網路的輸出層）相對於相應權重的導數比例改變 LSTM 網路的每個權重
 
 ![alt text](./Training_annotation.png)
 
@@ -83,6 +83,8 @@ The **"*"** denotes the **convolution operator 卷積算子**
 1. https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43905.pdf
 2. https://www.bioinf.jku.at/publications/older/3804.pdf
 3. https://en.wikipedia.org/wiki/Long_short-term_memory#Training
+4. https://en.wikipedia.org/wiki/Gradient_descent
+5. https://en.wikipedia.org/wiki/Backpropagation_through_time
 .
 .
 .
