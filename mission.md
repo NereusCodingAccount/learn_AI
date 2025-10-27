@@ -51,3 +51,4 @@ TensorFlow / PyTorch 程式
 把心得（例如「sigmoid 在深層網路會飽和」）寫回理論筆記。
 ---
 1. 拓撲?
+2. https://en.wikipedia.org/wiki/Seq2seq
