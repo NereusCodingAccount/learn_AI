@@ -26,9 +26,27 @@ In this analogy, the people represent the algorithm, and the path taken down the
 
 ## Solution of a linear system(線型函數的解)
 Gradient descent can be used to solve a **system of linear equations**
-![alt text](image.png)
-reformulated as a quadratic minimization problem. If the system matrix **A**{\displaystyle \mathbf {A} } is real symmetric and positive-definite, an objective function is defined as the quadratic function, with minimization of
+![alt text](./Gd_S_ls1.png)
 
+reformulated as a quadratic minimization problem. If the system matrix **_A_** is real symmetric and positive-definite, an objective function is defined as the quadratic function, with minimization of
+![alt text](./Gd_S_ls2.png)
+
+so that
+![alt text](./Gd_S_ls3.png)
+
+For a general real matrix **_A_**, linear least squares define
+![alt text](./Gd_S_ls4.png)
+
+In traditional linear least squares for real **_A_** and **_b_** the Euclidean norm is used, in which case
+![alt text](./Gd_S_ls5.png)
+
+![alt text](./Gd_S_ls6.png)
+
+![alt text](./Gd_S_ls7.png)
+
+### Geometric behavior and residual orthogonality
+![alt text](./Gd_S_ls8.png)
+As shown in the image on the right, steepest descent converges slowly due to the high condition number of**_A_**, and the orthogonality of residuals forces each new direction to undo the overshoot from the previous step. The result is a path that zigzags toward the solution. This inefficiency is one reason conjugate gradient or preconditioning methods are preferred.
 ---
 
 ## References
