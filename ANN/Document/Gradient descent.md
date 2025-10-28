@@ -1,6 +1,6 @@
 # Gradient descent 梯度下降
 
-#### Gradient descent is a method(方法) for unconstrained(無束約的) mathematical optimization(數學最佳化). It is a first-order iterative algorithm(迭代演算法) for minimizing(最小化 a differentiable(可微分化的) multivariate function(多元函數).
+#### Gradient descent is a method(方法) for unconstrained(無束約的) mathematical optimization(數學最佳化). It is a first-order iterative algorithm(迭代演算法) for minimizing(最小化) a differentiable(可微分化的) multivariate function(多元函數).
 
 ### The idea is to take repeated steps(反覆迭代) in the opposite direction of the gradient(梯度的反方向) (or approximate gradient(近似梯度)) of the function(函數) at the current point(當前點), because this is the direction(方向) of steepest descent(最陡). Conversely(相反), stepping in the direction of the gradient(梯度方向) will lead to a trajectory(軌跡) that maximizes(最大化) that function; the procedure(過程) is then known as gradient ascent(梯度上升). It is particularly useful(特別好用) in machine learning(機器學習) for minimizing(最小化) the cost(成本函數) or loss(損失函數) function. Gradient descent should not be confused with **local search algorithms(局部搜尋演算法)**, although both are iterative methods(迭代方法) for optimization(優化).
 
@@ -21,6 +21,13 @@ In this analogy, the people represent the algorithm, and the path taken down the
 ![alt text](./Gd_equation4.png)
 ![alt text](./Gd_equation5.png)
 ![alt text](./Gd_equation6.png)
+
+---
+
+## Solution of a linear system(線型函數的解)
+Gradient descent can be used to solve a **system of linear equations**
+![alt text](image.png)
+reformulated as a quadratic minimization problem. If the system matrix **A**{\displaystyle \mathbf {A} } is real symmetric and positive-definite, an objective function is defined as the quadratic function, with minimization of
 
 ---
 
