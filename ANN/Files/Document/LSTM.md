@@ -5,7 +5,7 @@
 #### 用於解決"RNN"在長序列學習中梯度消失和梯度爆炸等問題，之後被廣泛應用於語音識別、語言建模、機器翻譯、情感分析、時間序列預測、醫療診斷和音樂生成...
 #### 可作為複雜的非線性單元用於構造更大型
 
-[About Gradient descent](./Gradient%20descent.md)
+[About Gradient descent](./Gradient_descent.md)
 
 ---
 
@@ -15,31 +15,31 @@
   - 輸入門（Input Gate）：決定目前新進資訊中哪些部分要記錄到細胞狀態裡
   - 輸出門（Output Gate）：決定要從細胞狀態中輸出哪些資訊，作為當前序列的結果
   - 細胞狀態（Cell State）：像一條資訊通道，負責保存、傳遞和更新整個序列過程中的重要記憶
-  ![alt text](./LSTM_Gates.png)
+  ![alt text](../Pictures/LSTM_Gates.png)
 
 ---
 
 ## Equation 方程
-![alt text](./LSTM_equation.png)
+![alt text](../Pictures/LSTM_equation.png)
 
 
-![alt text](./LSTM_variable.png)
-![alt text](./LSTM_Gates_annotation.png)
+![alt text](../Pictures/LSTM_variable.png)
+![alt text](../Pictures/LSTM_Gates_annotation.png)
 
 ### Activation Function 激活函數
-![alt text](./LSTM_AF.png)
+![alt text](../Pictures/LSTM_AF.png)
 
 ---
 
 ## Peephole LSTM 窺孔LSTM
 - Peephole connections allow the gates to access the **constant error carousel (CEC) 恆定誤差輪播**, whose activation is the cell state.
 
-![alt text](./P_LSTM_equation.png)
-![alt text](./P_LATM_Gates.png)
-![alt text](./P_LSTM_Gates_annotation.png)
+![alt text](../Pictures/P_LSTM_equation.png)
+![alt text](../Pictures/P_LATM_Gates.png)
+![alt text](../Pictures/P_LSTM_Gates_annotation.png)
 
 ## Peephole convolutional LSTM 窺孔卷積LSTM
-![alt text](./PcLSTM.png)
+![alt text](../Pictures/PcLSTM.png)
 
 The **"*"** denotes the **convolution operator 卷積算子**
 
@@ -48,7 +48,7 @@ The **"*"** denotes the **convolution operator 卷積算子**
 ## Training 訓練
 - 使用 LSTM 單元的 RNN 可以在一組訓練序列上以監督方式進行訓練，使用**梯度下降**等優化演算法結合**時間反向傳播**來計算最佳化過程中所需的梯度，以便根據誤差（在 LSTM 網路的輸出層）相對於相應權重的導數比例改變 LSTM 網路的每個權重
 
-![alt text](./Training_annotation.png)
+![alt text](../Pictures/Training_annotation.png)
 
 ### CTC score function 鏈結時間分類
 
@@ -94,4 +94,4 @@ The **"*"** denotes the **convolution operator 卷積算子**
 .
 .
 
-# [返回](../main.md)
+# [返回](../../main.md)

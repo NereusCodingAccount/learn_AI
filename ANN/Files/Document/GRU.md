@@ -1,3 +1,3 @@
 # Gated Recurrent Unit/GRU 閘門神經網路(自取)
 
-# [返回](../main.md)
+# [返回](../../main.md)
