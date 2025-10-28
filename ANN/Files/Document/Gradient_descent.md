@@ -51,7 +51,8 @@ As shown in the image on the right, steepest descent converges slowly due to the
 
 ## References
 1. https://en.wikipedia.org/wiki/Gradient_descent
-
+2. https://books.google.com.tw/books?id=iD5s0iKXHP8C&pg=PA131&redir_esc=y#v=onepage&q&f=false
+3. https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf#page=471
 ---
 
 # [返回](../../main.md)
