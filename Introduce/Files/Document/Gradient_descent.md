@@ -55,4 +55,4 @@ As shown in the image on the right, steepest descent converges slowly due to the
 3. https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf#page=471
 ---
 
-# [返回](../../main.md)
+# [返回](../../ANN.md)
