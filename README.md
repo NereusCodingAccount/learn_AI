@@ -10,30 +10,30 @@
 ---
 
 # ‼️**目標**‼️
-1. 學會**神經網路架構**
+### 1. 學會**神經網路架構**
 
-2. 學會**深度學習**
+### 2. 學會**深度學習**
 
-3. 理解 **Attention / Transformer 架構**
+### 3. 理解 **Attention / Transformer 架構**
 #### BERT / GPT 基本概念、Tokenization、Embedding
 #### 能載入預訓練模型、輸入文字取得結果
 
-4. 使用 **Hugging Face Transformers 套件**
+### 4. 使用 **Hugging Face Transformers 套件**
 #### transformers, datasets, tokenizer
 #### 用現成模型做情緒分析、摘要、翻譯等任務
 
-5. 微調現成模型（如 **BERT、DistilGPT2**）
+### 5. 微調現成模型（如 **BERT、DistilGPT2**）
 #### DataLoader、loss、optimizer、Trainer API
 #### 微調 BERT / DistilGPT2 做你自己的資料任務
 
-6. 模型部署（API） **Flask / FastAPI（建立 Web 伺服器）**
+### 6. 模型部署（API） **Flask / FastAPI（建立 Web 伺服器）**
 #### 把模型變成可呼叫的 REST API
 
-7. **介面實作**
+### 7. **介面實作**
 #### Gradio / Streamlit / Discord Bot / 網頁前端
 #### 使用者可以直接操作模型
 
-8. 模型壓縮與**上線**
+### 8. 模型壓縮與**上線**
 #### Hugging Face Space、ONNX、量化
 #### 模型輕量化並部署到雲端平台
 
@@ -65,11 +65,11 @@
 # ✒️**檔案規劃**📋
 ## Markdown
 (每個大概念)
-1. 參考維基百科+問AI
-2. 照抄
-3. 翻譯
-4. 補充+修正 **"預判耗費時間大"**
-5. 定期補充資訊(from **國外論文**or書籍or網路)
+### 1. 參考維基百科+問AI
+### 2. 照抄
+### 3. 翻譯
+### 4. 補充+修正 **"預判耗費時間大"**
+### 5. 定期補充資訊(from **國外論文**or書籍or網路)
 
 ---
 
