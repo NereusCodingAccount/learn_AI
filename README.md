@@ -71,23 +71,25 @@
 ### 4. 補充+修正 **"預判耗費時間大"**
 ### 5. 定期補充資訊(from **國外論文**or書籍or網路)
 
+#### why?
+#### 翻譯原文檔案有一台手機也可以(在外面也行)，但打出文檔用電腦比較方便。而且有多個文檔，我在外面也可以交互看。
 ---
 
 # ✨**更新日誌**✨
 ## 2025/10/30
-### Theme : Name Change / README.md update
+### Theme : New concept
 - 修改**ANN資料夾**成**Introduce資料夾**
 - 修改main.md成**ANN.md**
-- 未來某些MD資料放在Introduce，**不用新增資料夾**
-- 新增多個介紹
+- 
+- 
 
 
 ## 2025/10/29
-### Theme : Complete File
+### Theme : Name Change / README.md update
 - 修改**Peepole LSTM 示意圖**
 - 完成**Gradient descent.md**
-- 未來某些MD資料放在Introduce，**不用新增資料夾**
-- 新增多個介紹
+- 未來可能新增**Gradient**介紹
+- 需要更多資源
 
 ## 2025/10/28 
 ### Theme : Convenience(Better path planning) / New concept
