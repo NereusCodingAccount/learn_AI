@@ -74,10 +74,18 @@
 ---
 
 # ✨**更新日誌**✨
-## 2025/10/29
+## 2025/10/30
 ### Theme : Name Change / README.md update
 - 修改**ANN資料夾**成**Introduce資料夾**
 - 修改main.md成**ANN.md**
+- 未來某些MD資料放在Introduce，**不用新增資料夾**
+- 新增多個介紹
+
+
+## 2025/10/29
+### Theme : Complete File
+- 修改**Peepole LSTM 示意圖**
+- 完成**Gradient descent.md**
 - 未來某些MD資料放在Introduce，**不用新增資料夾**
 - 新增多個介紹
 
