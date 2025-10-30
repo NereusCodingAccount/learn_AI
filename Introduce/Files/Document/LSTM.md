@@ -35,7 +35,7 @@
 - Peephole connections allow the gates to access the **constant error carousel (CEC) 恆定誤差輪播**, whose activation is the cell state.
 
 ![alt text](../Pictures/P_LSTM_equation.png)
-
+![alt text](../Pictures/P_LSTM_Gates.png)
 ![alt text](../Pictures/P_LSTM_Gates_annotation.png)
 
 ## Peephole convolutional LSTM 窺孔卷積LSTM
