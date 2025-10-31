@@ -41,7 +41,7 @@
 ## Peephole convolutional LSTM 窺孔卷積LSTM
 ![alt text](../Pictures/PcLSTM.png)
 
-The **"*"** denotes the **convolution operator 卷積算子**
+The **"*"** denotes(表示） the **convolution operator 卷積算子**
 
 ---
 
