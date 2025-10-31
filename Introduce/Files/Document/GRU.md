@@ -5,16 +5,16 @@
 ## Architecture (建築學?)
 
 ### Fully gated unit
-![alt text](image.png)
+![alt text](../Pictures/GRU_1.png)
 
-![alt text](image-1.png)
+![alt text](../Pictures/GRU_2.png)
 ### Minimal gated unit
 
-![alt text](image-2.png)
+![alt text](../Pictures/GRU_3.png)
 
 ### Light gated recurrent unit
 
-![alt text](image-3.png)
+![alt text](../Pictures/GRU_4.png)
 
 ---
 
