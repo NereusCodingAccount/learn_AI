@@ -98,9 +98,10 @@
 
 
 
+---
 
+## References 參考
 
-
-
+1. https://en.wikipedia.org/wiki/Convolutional_neural_network
 
 # [返回](../../ANN.md)
