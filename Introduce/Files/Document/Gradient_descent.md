@@ -34,10 +34,10 @@ reformulated(重新配方) as a quadratic(二次函數) minimization(最小化) 
 so that
 ![alt text](../Pictures/Gd_S_ls3.png)
 
-For a general real matrix **_A_**, linear least squares define
+For a general real matrix(矩陣） **_A_**, linear（線型） least（最小）squares(平方法） define(定義）
 ![alt text](../Pictures/Gd_S_ls4.png)
 
-In traditional linear least squares for real **_A_** and **_b_** the Euclidean norm is used, in which case
+In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數）is used, in which case
 ![alt text](../Pictures/Gd_S_ls5.png)
 
 ![alt text](../Pictures/Gd_S_ls6.png)
@@ -46,7 +46,7 @@ In traditional linear least squares for real **_A_** and **_b_** the Euclidean n
 
 ### Geometric behavior and residual orthogonality
 ![alt text](../Pictures/Gd_S_ls8.png)
-As shown in the image on the right, steepest descent converges slowly due to the high condition number of**_A_**, and the orthogonality of residuals forces each new direction to undo the overshoot from the previous step. The result is a path that zigzags toward the solution. This inefficiency is one reason conjugate gradient or preconditioning methods are preferred.
+As shown in the image on the right, steepest descent converges(收斂） slowly due to the high condition number of**_A_**, and the orthogonality（正交性） of residuals（殘差） forces(力量） each new direction to undo(撤銷） the overshoot(過衝） from the previous(以前的） step. The result is a path that zigzags(蜿蜒） toward(朝向） the solution. This inefficiency（效率低下） is one reason **conjugate gradient（共軛梯度）** or preconditioning methods(預處理方法） are preferred(首選）.
 
 ---
 
