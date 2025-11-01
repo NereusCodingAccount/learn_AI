@@ -13,7 +13,7 @@
 ![alt text](../Pictures/Gd_p1.png)
 
 ### An analogy(類比) for understanding gradient descent
-The basic intuition(基本直覺)behind gradient descent can be illustrated(闡述)by a hypothetical scenario（假設場景). People are stuck(卡住) in the mountains and are trying to get down (i.e.(也就是說), trying to find the global minimum(全域最小值)). There is heavy fog(霧) such that visibility(能見度)is extremely(極為) low. Therefore(所以), the path down the mountain is not visible, so they must use local information to find the minimum. They can use the method(方法)of gradient descent, which involves(涉及) looking at the steepness(陡峭度) of the hill at their current position(目前位置), then proceeding(繼續)in the direction(方向)with the steepest(最陡峭)descent (i.e., downhill(下坡)). If they were trying to find the top of the mountain (i.e., the maximum), then they would proceed(繼續) in the direction of steepest ascent(上升) (i.e., uphill(上坡)). Using this method, they would eventually(最終) find their way down the mountain or possibly get stuck in some hole (i.e., local minimum or saddle point(鞍點)), like a mountain lake. However, assume(認為)also that the steepness(陡峭度) of the hill is not **"immediately obvious(顯而易見)"** with simple observation, but rather(相當)it requires(要求) a sophisticated(複雜的)instrument(工具、機械、儀器)to measure, which the people happen to have at that moment(片刻). It takes quite some time to measure the steepness of the hill with the instrument. Thus(因此), they should minimize(最小化) their use of the instrument if they want to get down the mountain before sunset. The difficulty then is choosing the frequency(頻率) at which they should measure the steepness of the hill so as not to go off track(追蹤).
+The basic intuition(基本直覺)behind gradient descent can be illustrated(闡述)by a hypothetical scenario(假設場景). People are stuck(卡住) in the mountains and are trying to get down (i.e.(也就是說), trying to find the global minimum(全域最小值)). There is heavy fog(霧) such that visibility(能見度)is extremely(極為) low. Therefore(所以), the path down the mountain is not visible, so they must use local information to find the minimum. They can use the method(方法)of gradient descent, which involves(涉及) looking at the steepness(陡峭度) of the hill at their current position(目前位置), then proceeding(繼續)in the direction(方向)with the steepest(最陡峭)descent (i.e., downhill(下坡)). If they were trying to find the top of the mountain (i.e., the maximum), then they would proceed(繼續) in the direction of steepest ascent(上升) (i.e., uphill(上坡)). Using this method, they would eventually(最終) find their way down the mountain or possibly get stuck in some hole (i.e., local minimum or saddle point(鞍點)), like a mountain lake. However, assume(認為)also that the steepness(陡峭度) of the hill is not **"immediately obvious(顯而易見)"** with simple observation, but rather(相當)it requires(要求) a sophisticated(複雜的)instrument(工具、機械、儀器)to measure, which the people happen to have at that moment(片刻). It takes quite some time to measure the steepness of the hill with the instrument. Thus(因此), they should minimize(最小化) their use of the instrument if they want to get down the mountain before sunset. The difficulty then is choosing the frequency(頻率) at which they should measure the steepness of the hill so as not to go off track(追蹤).
 
 In this analogy(類比), the people represent the algorithm(演算法), and the path taken down(紀錄)the mountain represents(代表)the sequence(順序)of parameter(範圍)settings that the algorithm will explore(探索). The steepness of the hill represents the slope(坡)of the function at that point. The instrument used to measure steepness is differentiation(差異化). The direction(方向)they choose to travel in aligns(對齊) with the gradient of the function at that point. The amount(數量) of time they travel before taking another measurement(測量) is the step size(步長).
 
@@ -34,10 +34,10 @@ reformulated(重新配方) as a quadratic(二次函數) minimization(最小化) 
 so that
 ![alt text](../Pictures/Gd_S_ls3.png)
 
-For a general real matrix(矩陣） **_A_**, linear（線型） least（最小）squares(平方法） define(定義）
+For a general real matrix(矩陣) **_A_**, linear(線型) least(最小)squares(平方法) define(定義)
 ![alt text](../Pictures/Gd_S_ls4.png)
 
-In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數）is used, in which case
+In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數)is used, in which case
 ![alt text](../Pictures/Gd_S_ls5.png)
 
 ![alt text](../Pictures/Gd_S_ls6.png)
@@ -46,7 +46,7 @@ In traditional linear least squares for real **_A_** and **_b_** the **Euclidean
 
 ### Geometric behavior and residual orthogonality
 ![alt text](../Pictures/Gd_S_ls8.png)
-As shown in the image on the right, steepest descent converges(收斂） slowly due to the high condition number of**_A_**, and the orthogonality（正交性） of residuals（殘差） forces(力量） each new direction to undo(撤銷） the overshoot(過衝） from the previous(以前的） step. The result is a path that zigzags(蜿蜒） toward(朝向） the solution. This inefficiency（效率低下） is one reason **conjugate gradient（共軛梯度）** or preconditioning methods(預處理方法） are preferred(首選）.
+As shown in the image on the right, steepest descent converges(收斂) slowly due to the high condition number of**_A_**, and the orthogonality(正交性) of residuals(殘差) forces(力量) each new direction to undo(撤銷) the overshoot(過衝) from the previous(以前的) step. The result is a path that zigzags(蜿蜒) toward(朝向) the solution. This inefficiency(效率低下) is one reason **conjugate gradient(共軛梯度)** or preconditioning methods(預處理方法) are preferred(首選).
 
 ---
 
