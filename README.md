@@ -77,8 +77,10 @@
 
 # ✨**更新日誌**✨
 ## 2025/11/01
-### Theme : Tidy
+### Theme : Tidy and New concept
 - 整理Introduce資料夾
+- 解決github上跟電腦檔案差異導致的**錯誤**
+- 新增內容到**CNN.md**
 
 ## 2025/10/31
 ### Theme : New concept
