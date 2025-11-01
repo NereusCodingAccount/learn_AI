@@ -76,6 +76,10 @@
 ---
 
 # ✨**更新日誌**✨
+## 2025/11/01
+### Theme : Tidy
+- 整理Introduce資料夾
+
 ## 2025/10/31
 ### Theme : New concept
 - 新增內容到**CNN.md**
