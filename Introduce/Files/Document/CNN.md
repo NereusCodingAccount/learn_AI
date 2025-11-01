@@ -125,16 +125,7 @@
 #### Three hyperparameters control the size of the output volume of the convolutional layer: the depth, stride, and padding size:
 
 - #### The depth of the output volume controls the number of neurons in a layer that connect to the same region of the input volume. These neurons learn to activate for different features in the input. For example, if the first convolutional layer takes the raw image as input, then different neurons along the depth dimension may activate in the presence of various oriented edges, or blobs of color.
-- Stride controls how depth columns around the width and height are allocated. If the stride is 1, then we move the filters one pixel at a time. This leads to heavily overlapping receptive fields between the columns, and to large output volumes. For any integer 
-S
->
-0
-,
-{\textstyle S>0,} a stride S means that the filter is translated S units at a time per output. In practice, 
-S
-≥
-3
-{\textstyle S\geq 3} is rare. A greater stride means smaller overlap of receptive fields and smaller spatial dimensions of the output volume.
+- Stride controls how depth columns around the width and height are allocated. If the stride is 1, then we move the filters one pixel at a time. This leads to heavily overlapping receptive fields between the columns, and to large output volumes. For any integer **_S > 0_**, a stride S means that the filter is translated S units at a time per output. In practice, **_S ≥ 3_** is rare. A greater stride means smaller overlap of receptive fields and smaller spatial dimensions of the output volume.
 - 
 
 
