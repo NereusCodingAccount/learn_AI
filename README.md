@@ -99,6 +99,7 @@
 - 新增多個檔案來預留未來的空間
 - 新增內容到 **Activation_funtion.md**
 - 新增內容到 **Loss_funtion.md**
+- 新增內容到 **Optimizer.md**
 
 ## 2025/11/01
 ### Theme : Tidy and New concept
