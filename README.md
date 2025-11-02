@@ -92,9 +92,12 @@
 ---
 
 # ✨**更新日誌**✨
-## 2025/11/01
+## 2025/11/02
 ### Theme : New concept
 - 新增內容到**CNN.md**
+- 新增 **Learn_PL** repository 來預留未來學程式的空間(AI的程式放在不會放這repo)
+- 新增多個檔案來預留未來的空間
+- 新增內容到 Activation_funtion.md 
 
 ## 2025/11/01
 ### Theme : Tidy and New concept
