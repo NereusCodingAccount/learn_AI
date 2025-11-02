@@ -51,3 +51,6 @@
 - 使用 weight decay 約 1e-4 ~ 1e-2（依模型與任務調整）。  
 - 加入 scheduler 與 warmup 能顯著提升大型模型的訓練穩定性。  
 - 定期 checkpoint，並在訓練中加入 gradient clipping 以避免不穩定。
+
+
+# [返回](../../ANN.md)
