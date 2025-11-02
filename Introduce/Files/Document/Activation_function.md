@@ -74,3 +74,8 @@
 ## References
 
 1. [維基百科](https://en.wikipedia.org/wiki/Activation_function)
+2. https://web.archive.org/web/20181006235506/http://didattica.cs.unicam.it/lib/exe/fetch.php?media=didattica:magistrale:kebi:ay_1718:ke-11_neural_networks.pdf
+3. https://www.inass.org/2019/2019063019.pdf
+4. https://hal.science/hal-03753170/file/Cybenko1989.pdf
+
+# [返回](../../ANN.md)
