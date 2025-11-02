@@ -107,4 +107,4 @@ Gradient descent can also be used to solve a system of nonlinear equations. Belo
 3. https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf#page=471
 ---
 
-# [返回](../../ANN.md)
+# [返回](./LSTM.md)
