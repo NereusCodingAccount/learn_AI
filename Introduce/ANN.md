@@ -6,7 +6,7 @@
 - 前往[Layer(層)](./Files/Document/Layer.md) 
 - [啟動函數](./Files/Document/Activation_function.md)（Activation）：非線性變換，例如 ReLU、Sigmoid、Tanh、GELU。  
 - [損失函數](./Files/Document/Loss_function.md)（Loss）：評估模型輸出與目標差距（分類常用 Cross‑Entropy，回歸用 MSE）。  
-- 優化器（Optimizer）：更新參數的方法，如 SGD、Adam。  
+- [優化器](./Files/Document/Optimizer.md)（Optimizer）：更新參數的方法，如 SGD、Adam。  
 - 結構模式：殘差（Residual）/ 跳接（Skip）、多分支（Inception 類型）、編碼器‑解碼器（Encoder‑Decoder）等。
 
 ## 常見架構類型（用途）
