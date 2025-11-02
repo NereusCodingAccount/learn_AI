@@ -11,7 +11,7 @@
 ## 3. 理解 **Attention / Transformer 架構** + HTML/CSS/JavaScript
 ### BERT / GPT 基本概念、Tokenization、Embedding
 ### 能載入預訓練模型、輸入文字取得結果
-
+### 可能Attention / Transformer會和ANN一起學
 2026/02/14~2026/06/30
 
 ## 4. 使用 **Hugging Face Transformers 套件**
