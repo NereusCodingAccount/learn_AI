@@ -1,5 +1,5 @@
 # 神經網路架構速覽
-
+# 當ANN.md完成時這檔案將會刪除
 # 主要元件（簡潔）
 
 ## 層（Layer）：Dense/Linear、Conv、RNN、Self-Attention。
