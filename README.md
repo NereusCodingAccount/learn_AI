@@ -106,7 +106,7 @@
 ### Theme : New concept
 - 新增內容到**CNN.md**
 - 解決Gradient_descent.md中的**bugs**
-f
+
 ## 2025/10/30
 ### Theme : New concept
 - 修改**ANN資料夾**成**Introduce資料夾**
