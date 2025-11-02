@@ -222,6 +222,101 @@
 
 ---
 
+## Regularization methods
+
+#### Regularization is a process of introducing additional information to solve an ill-posed problem or to prevent overfitting. CNNs use various types of regularization.
+
+### Empirical
+
+#### Dropout
+
+##### Because networks have so many parameters, they are prone to overfitting. One method to reduce overfitting is dropout, introduced in 2014. At each training stage, individual nodes are either "dropped out" of the net (ignored) with probability **_1−p_** or kept with probability **_p_**, so that a reduced network is left; incoming and outgoing edges to a dropped-out node are also removed. Only the reduced network is trained on the data in that stage. The removed nodes are then reinserted into the network with their original weights.
+
+##### In the training stages, **_p_** is usually 0.5; for input nodes, it is typically much higher because information is directly lost when input nodes are ignored.
+
+##### At testing time after training has finished, we would ideally like to find a sample average of all possible **_2^n_** dropped-out networks; unfortunately this is unfeasible for large values of **_n_**. However, we can find an approximation by using the full network with each node's output weighted by a factor of **_p_**, so the expected value of the output of any node is the same as in the training stages. This is the biggest contribution of the dropout method: although it effectively generates **_2^n_** neural nets, and as such allows for model combination, at test time only a single network needs to be tested.
+
+##### By avoiding training all nodes on all training data, dropout decreases overfitting. The method also significantly improves training speed. This makes the model combination practical, even for deep neural networks. The technique seems to reduce node interactions, leading them to learn more robust features that better generalize to new data.
+
+#### DropConnect
+
+##### DropConnect is the generalization of dropout in which each connection, rather than each output unit, can be dropped with probability **_1 − p_**. Each unit thus receives input from a random subset of units in the previous layer.
+
+##### DropConnect is similar to dropout as it introduces dynamic sparsity within the model, but differs in that the sparsity is on the weights, rather than the output vectors of a layer. In other words, the fully connected layer with DropConnect becomes a sparsely connected layer in which the connections are chosen at random during the training stage.
+
+#### Stochastic pooling
+
+##### A major drawback to dropout is that it does not have the same benefits for convolutional layers, where the neurons are not fully connected.
+
+##### Even before dropout, in 2013 a technique called stochastic pooling, the conventional deterministic pooling operations were replaced with a stochastic procedure, where the activation within each pooling region is picked randomly according to a multinomial distribution, given by the activities within the pooling region. This approach is free of hyperparameters and can be combined with other regularization approaches, such as dropout and data augmentation.
+
+##### An alternate view of stochastic pooling is that it is equivalent to standard max pooling but with many copies of an input image, each having small local deformations. This is similar to explicit elastic deformations of the input images, which delivers excellent performance on the MNIST data set. Using stochastic pooling in a multilayer model gives an exponential number of deformations since the selections in higher layers are independent of those below.
+
+#### Artificial data
+
+##### Because the degree of model overfitting is determined by both its power and the amount of training it receives, providing a convolutional network with more training examples can reduce overfitting. Because there is often not enough available data to train, especially considering that some part should be spared for later testing, two approaches are to either generate new data from scratch (if possible) or perturb existing data to create new ones. The latter one is used since mid-1990s. For example, input images can be cropped, rotated, or rescaled to create new examples with the same labels as the original training set.
+
+
+### Explicit
+
+#### Early stopping
+
+##### One of the simplest methods to prevent overfitting of a network is to simply stop the training before overfitting has had a chance to occur. It comes with the disadvantage that the learning process is halted.
+
+#### Number of parameters
+
+##### Another simple way to prevent overfitting is to limit the number of parameters, typically by limiting the number of hidden units in each layer or limiting network depth. For convolutional networks, the filter size also affects the number of parameters. Limiting the number of parameters restricts the predictive power of the network directly, reducing the complexity of the function that it can perform on the data, and thus limits the amount of overfitting. This is equivalent to a **"zero norm"**.
+
+#### Weight decay
+
+##### A simple form of added regularizer is weight decay, which simply adds an additional error, proportional to the sum of weights (L1 norm) or squared magnitude (L2 norm) of the weight vector, to the error at each node. The level of acceptable model complexity can be reduced by increasing the proportionality constant('alpha' hyperparameter), thus increasing the penalty for large weight vectors.
+
+##### L2 regularization is the most common form of regularization. It can be implemented by penalizing the squared magnitude of all parameters directly in the objective. The L2 regularization has the intuitive interpretation of heavily penalizing peaky weight vectors and preferring diffuse weight vectors. Due to multiplicative interactions between weights and inputs this has the useful property of encouraging the network to use all of its inputs a little rather than some of its inputs a lot.
+
+##### L1 regularization is also common. It makes the weight vectors sparse during optimization. In other words, neurons with L1 regularization end up using only a sparse subset of their most important inputs and become nearly invariant to the noisy inputs. L1 with L2 regularization can be combined; this is called elastic net regularization.
+
+#### Max norm constraints
+
+![alt text](../Pictures/CNN_13.png)
+
+---
+
+## Hierarchical coordinate frames
+
+#### Pooling loses the precise spatial relationships between high-level parts (such as nose and mouth in a face image). These relationships are needed for identity recognition. Overlapping the pools so that each feature occurs in multiple pools, helps retain the information. Translation alone cannot extrapolate the understanding of geometric relationships to a radically new viewpoint, such as a different orientation or scale. On the other hand, people are very good at extrapolating; after seeing a new shape once they can recognize it from a different viewpoint.
+
+#### An earlier common way to deal with this problem is to train the network on transformed data in different orientations, scales, lighting, etc. so that the network can cope with these variations. This is computationally intensive for large data-sets. The alternative is to use a hierarchy of coordinate frames and use a group of neurons to represent a conjunction of the shape of the feature and its pose relative to the retina. The pose relative to the retina is the relationship between the coordinate frame of the retina and the intrinsic features' coordinate frame.
+
+#### Thus, one way to represent something is to embed the coordinate frame within it. This allows large features to be recognized by using the consistency of the poses of their parts (e.g. nose and mouth poses make a consistent prediction of the pose of the whole face). This approach ensures that the higher-level entity (e.g. face) is present when the lower-level (e.g. nose and mouth) agree on its prediction of the pose. The vectors of neuronal activity that represent pose ("pose vectors") allow spatial transformations modeled as linear operations that make it easier for the network to learn the hierarchy of visual entities and generalize across viewpoints. This is similar to the way the human visual system imposes coordinate frames in order to represent shapes.
+
+---
+
+## Fine-tuning
+
+#### For many applications, training data is not very available. Convolutional neural networks usually require a large amount of training data in order to avoid overfitting. A common technique is to train the network on a larger data set from a related domain. Once the network parameters have converged an additional training step is performed using the in-domain data to fine-tune the network weights, this is known as transfer learning. Furthermore, this technique allows convolutional network architectures to successfully be applied to problems with tiny training sets.
+
+---
+
+## Related architectures
+
+### Deep Q-networks
+
+#### A deep Q-network (DQN) is a type of deep learning model that combines a deep neural network with Q-learning, a form of reinforcement learning. Unlike earlier reinforcement learning agents, DQNs that utilize CNNs can learn directly from high-dimensional sensory inputs via reinforcement learning.
+
+#### Preliminary results were presented in 2014, with an accompanying paper in February 2015. The research described an application to Atari 2600 gaming. Other deep reinforcement learning models preceded it.
+
+### Deep belief networks
+
+#### Convolutional deep belief networks (CDBN) have structure very similar to convolutional neural networks and are trained similarly to deep belief networks. Therefore, they exploit the 2D structure of images, like CNNs do, and make use of pre-training like deep belief networks. They provide a generic structure that can be used in many image and signal processing tasks. Benchmark results on standard image datasets like CIFAR have been obtained using CDBNs.
+
+### Neural abstraction pyramid
+
+#### The feed-forward architecture of convolutional neural networks was extended in the neural abstraction pyramid by lateral and feedback connections. The resulting recurrent convolutional network allows for the flexible incorporation of contextual information to iteratively resolve local ambiguities. In contrast to previous models, image-like outputs at the highest resolution were generated, e.g., for semantic segmentation, image reconstruction, and object localization tasks.
+
+![alt text](../Pictures/CNN_14.png)
+
+---
+
 ## References 參考
 
 1. https://en.wikipedia.org/wiki/Convolutional_neural_network
