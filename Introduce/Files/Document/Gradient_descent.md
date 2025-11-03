@@ -44,14 +44,14 @@ In traditional linear least squares for real **_A_** and **_b_** the **Euclidean
 
 ![alt text](../Pictures/Gd_S_ls7.png)
 
-### Geometric behavior and residual orthogonality
+### Geometric(幾何） behavior(行為） and residual（殘差） orthogonality(正交性）
 ![alt text](../Pictures/Gd_S_ls8.png)
 As shown in the image on the right, steepest descent converges(收斂) slowly due to the high condition number of**_A_**, and the orthogonality(正交性) of residuals(殘差) forces(力量) each new direction to undo(撤銷) the overshoot(過衝) from the previous(以前的) step. The result is a path that zigzags(蜿蜒) toward(朝向) the solution. This inefficiency(效率低下) is one reason **conjugate gradient(共軛梯度)** or preconditioning methods(預處理方法) are preferred(首選).
 
 ---
 
 ## Solution of a non-linear system(非線型系統)
-Gradient descent can also be used to solve a system of nonlinear equations. Below is an example that shows how to use the gradient descent to solve for three unknown variables, **_x1_**, **_x2_**, and **_x3_**. This example shows one iteration of the gradient descent.
+Gradient descent can also be used to solve a system of nonlinear equations. Below(以下） is an example that shows how to use the gradient descent to solve for three unknown variables(未知變數）, **_x1_**, **_x2_**, and **_x3_**. This example shows one iteration of the gradient descent.
 
 ![alt text](../Pictures/Gd_nl_S1.png)
 ![alt text](../Pictures/Gd_nl_S2.png)
