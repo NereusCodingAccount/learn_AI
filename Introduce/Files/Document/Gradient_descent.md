@@ -51,7 +51,7 @@ As shown in the image on the right, steepest descent converges(收斂) slowly du
 ---
 
 ## Solution of a non-linear system(非線型系統)
-Gradient descent can also be used to solve a system of nonlinear equations. Below(以下） is an example that shows how to use the gradient descent to solve for three unknown variables(未知變數）, **_x1_**, **_x2_**, and **_x3_**. This example shows one iteration of the gradient descent.
+Gradient descent can also be used to solve a system of nonlinear equations. Below(以下） is an example that shows how to use the gradient descent to solve for three unknown variables(未知變數）, **_x1_**, **_x2_**, and **_x3_**. This example shows one iteration(迭代） of the gradient descent.
 
 ![alt text](../Pictures/Gd_nl_S1.png)
 ![alt text](../Pictures/Gd_nl_S2.png)
@@ -62,13 +62,13 @@ Gradient descent can also be used to solve a system of nonlinear equations. Belo
 
 ## Comments
 
-#### Gradient descent works in spaces of any number of dimensions, even in infinite-dimensional ones. In the latter case, the search space is typically a function space, and one calculates the Fréchet derivative of the functional to be minimized to determine the descent direction.
+#### Gradient descent works in spaces of any number of dimensions, even in infinite-dimensional(無限維度） ones. In the latter case(後者狀況）, the search space is typically a function space, and one calculates the Fréchet derivative(衍生物） of the functional(功能性） to be minimized to determine(決定） the descent direction(下降方向）.
 
-#### That gradient descent works in any number of dimensions (finite number at least) can be seen as a consequence of the Cauchy–Schwarz inequality, i.e. the magnitude of the inner (dot) product of two vectors of any dimension is maximized when they are colinear. In the case of gradient descent, that would be when the vector of independent variable adjustments is proportional to the gradient vector of partial derivatives.
+#### That gradient descent works in any number of dimensions(方面） (finite(有限個） number at least) can be seen as a consequence(結果） of the Cauchy–Schwarz inequality(不等式）, i.e.(=拉丁文id est 也就是說） the magnitude(規模） of the inner(內在的） (dot) product of two vectors(向量） of any dimension(方面） is maximized(最大化） when they are colinear(共線）. In the case of gradient descent, that would be when the vector of independent(獨立的） variable adjustments(調整） is proportional(比例） to the gradient vector(向量） of partial(部分） derivatives(衍生物）.
 
-#### The gradient descent can take many iterations to compute a local minimum with a required accuracy, if the curvature in different directions is very different for the given function. For such functions, preconditioning, which changes the geometry of the space to shape the function level sets like concentric circles, cures the slow convergence. Constructing and applying preconditioning can be computationally expensive, however.
+#### The gradient descent can take many iterations(迭代） to compute(計算） a local minimum with a required(所需的） accuracy(準確性）, if the curvature(曲率） in different directions is very different for the given(給定的） function. For such functions, preconditioning(預處理）, which changes the geometry(幾何學） of the space to shape the function level sets like concentric(同心） circles, cures the slow convergence(收斂）. Constructing(建造） and applying(申請） preconditioning(預處理） can be computationally(計算地） expensive(成本昂貴）, however.
 
-#### The gradient descent can be modified via momentums (Nesterov, Polyak, and Frank–Wolfe) and heavy-ball parameters (exponential moving averages and positive-negative momentum). The main examples of such optimizers are Adam, DiffGrad, Yogi, AdaBelief, etc.
+#### The gradient descent can be modified via momentums(動量） (Nesterov, Polyak, and Frank–Wolfe) and heavy-ball parameters (exponential moving averages and positive-negative momentum). The main examples of such optimizers are Adam, DiffGrad, Yogi, AdaBelief, etc.
 
 ![alt text](../Pictures/Gd_c.png)
 
