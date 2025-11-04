@@ -68,25 +68,25 @@ Gradient descent can also be used to solve a system of nonlinear equations. Belo
 
 #### The gradient descent can take many iterations(迭代) to compute(計算) a local minimum with a required(所需的) accuracy(準確性), if the curvature(曲率) in different directions is very different for the given(給定的) function. For such functions, preconditioning(預處理), which changes the geometry(幾何學) of the space to shape the function level sets like concentric(同心) circles, cures the slow convergence(收斂). Constructing(建造) and applying(申請) preconditioning(預處理) can be computationally(計算地) expensive(成本昂貴), however.
 
-#### The gradient descent can be modified via momentums(動量) (Nesterov, Polyak, and Frank–Wolfe) and heavy-ball parameters(參數） (exponential(指數） moving averages and positive-negative(正負） momentum(動量）). The main examples of such optimizers(最佳化器） are Adam, DiffGrad, Yogi, AdaBelief, etc(等等）.
+#### The gradient descent can be modified via momentums(動量) (Nesterov, Polyak, and Frank–Wolfe) and heavy-ball parameters(參數) (exponential(指數) moving averages and positive-negative(正負) momentum(動量)). The main examples of such optimizers(最佳化器) are Adam, DiffGrad, Yogi, AdaBelief, etc(等等).
 
 ![alt text](../Pictures/Gd_c.png)
 
 ---
 
-## Modifications(修改）
+## Modifications(修改)
 
-#### Gradient descent can converge(收斂） to a local minimum and slow down in a neighborhood(鄰近） of a saddle point(鞍點）. Even for unconstrained(不可約束的） quadratic(二次的） minimization(縮減到最小）, gradient descent develops(發展） a zig–zag(曲折的） pattern(模式） of subsequent(隨後的） iterates(迭代） as iterations(迭代） progress(進度）, resulting in slow convergence(收斂）. Multiple modifications(多次修改） of gradient descent have been proposed(提議） to address(解決） these deficiencies(不足）.
+#### Gradient descent can converge(收斂) to a local minimum and slow down in a neighborhood(鄰近) of a saddle point(鞍點). Even for unconstrained(不可約束的) quadratic(二次的) minimization(縮減到最小), gradient descent develops(發展) a zig–zag(曲折的) pattern(模式) of subsequent(隨後的) iterates(迭代) as iterations(迭代) progress(進度), resulting in slow convergence(收斂). Multiple modifications(多次修改) of gradient descent have been proposed(提議) to address(解決) these deficiencies(不足).
 
 ### Fast gradient methods
 
 ![alt text](../Pictures/Gd_M.png)
 
-### Momentum(動力）  or heavy ball method
+### Momentum(動力)  or heavy ball method
 
-#### Trying to break the zig-zag(曲折的） pattern(圖案） of gradient descent, the momentum or heavy ball method uses a momentum term(術語） in analogy(類比） to a heavy ball sliding(滑） on the surface(表面） of values of the function being minimized, or to mass(大量的） movement in Newtonian dynamics(動力學） through a viscous(稠密的） medium(介質） in a conservative force field(保守力場）. Gradient descent with momentum(動量） remembers(記住） the solution update at each iteration(迭代）, and determines the next update as a linear combination(組合） of the gradient and the previous(以前的） update. For unconstrained(不受約束的） quadratic(二次函數） minimization(最小化）, a theoretical(理論） convergence(收斂） rate(速率） bound(邊界） of the heavy ball method is asymptotically(漸近的） the same as that for the optimal(最佳的） conjugate(共軛） gradient method.
+#### Trying to break the zig-zag(曲折的) pattern(圖案) of gradient descent, the momentum or heavy ball method uses a momentum term(術語) in analogy(類比) to a heavy ball sliding(滑) on the surface(表面) of values of the function being minimized, or to mass(大量的) movement in Newtonian dynamics(動力學) through a viscous(稠密的) medium(介質) in a conservative force field(保守力場). Gradient descent with momentum(動量) remembers(記住) the solution update at each iteration(迭代), and determines the next update as a linear combination(組合) of the gradient and the previous(以前的) update. For unconstrained(不受約束的) quadratic(二次函數) minimization(最小化), a theoretical(理論) convergence(收斂) rate(速率) bound(邊界) of the heavy ball method is asymptotically(漸近的) the same as that for the optimal(最佳的) conjugate(共軛) gradient method.
 
-#### This technique(科技） is used in stochastic(隨機） gradient descent and as an extension(擴大） to the backpropagation(反向傳播） algorithms(演算法） used to train artificial neural(神經） networks. In the direction of updating, stochastic(隨機） gradient descent adds a stochastic(隨機） property(財產）. The weights can be used to calculate the derivatives(衍生物）.
+#### This technique(科技) is used in stochastic(隨機) gradient descent and as an extension(擴大) to the backpropagation(反向傳播) algorithms(演算法) used to train artificial neural(神經) networks. In the direction of updating, stochastic(隨機) gradient descent adds a stochastic(隨機) property(財產). The weights can be used to calculate the derivatives(衍生物).
 ---
 
 ## Extensions
