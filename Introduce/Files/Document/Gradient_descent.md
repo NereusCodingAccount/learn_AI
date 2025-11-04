@@ -68,15 +68,15 @@ Gradient descent can also be used to solve a system of nonlinear equations. Belo
 
 #### The gradient descent can take many iterations(迭代) to compute(計算) a local minimum with a required(所需的) accuracy(準確性), if the curvature(曲率) in different directions is very different for the given(給定的) function. For such functions, preconditioning(預處理), which changes the geometry(幾何學) of the space to shape the function level sets like concentric(同心) circles, cures the slow convergence(收斂). Constructing(建造) and applying(申請) preconditioning(預處理) can be computationally(計算地) expensive(成本昂貴), however.
 
-#### The gradient descent can be modified via momentums(動量) (Nesterov, Polyak, and Frank–Wolfe) and heavy-ball parameters (exponential moving averages and positive-negative momentum). The main examples of such optimizers are Adam, DiffGrad, Yogi, AdaBelief, etc.
+#### The gradient descent can be modified via momentums(動量) (Nesterov, Polyak, and Frank–Wolfe) and heavy-ball parameters(參數） (exponential(指數） moving averages and positive-negative(正負） momentum(動量）). The main examples of such optimizers(最佳化器） are Adam, DiffGrad, Yogi, AdaBelief, etc(等等）.
 
 ![alt text](../Pictures/Gd_c.png)
 
 ---
 
-## Modifications
+## Modifications(修改）
 
-#### Gradient descent can converge to a local minimum and slow down in a neighborhood of a saddle point. Even for unconstrained quadratic minimization, gradient descent develops a zig–zag pattern of subsequent iterates as iterations progress, resulting in slow convergence. Multiple modifications of gradient descent have been proposed to address these deficiencies.
+#### Gradient descent can converge(收斂） to a local minimum and slow down in a neighborhood(鄰近） of a saddle point(鞍點）. Even for unconstrained(不可約束的） quadratic(二次的） minimization(縮減到最小）, gradient descent develops(發展） a zig–zag(曲折的） pattern(模式） of subsequent(隨後的） iterates(迭代） as iterations(迭代） progress(進度）, resulting in slow convergence. Multiple modifications of gradient descent have been proposed to address these deficiencies.
 
 ### Fast gradient methods
 
