@@ -91,14 +91,14 @@ Gradient descent can also be used to solve a system of nonlinear equations. Belo
 
 ## Extensions
 
-#### Gradient descent can be extended to handle constraints by including a projection onto the set of constraints. This method is only feasible when the projection is efficiently computable on a computer. Under suitable assumptions, this method converges. This method is a specific case of the forward–backward algorithm for monotone inclusions (which includes convex programming and variational inequalities).
+#### Gradient descent can be extended(延長） to handle(處理） constraints(約束） by including(包含） a projection(投射） onto the set of constraints. This method is only feasible(可行的） when the projection is efficiently(高效率） computable(可計算的） on a computer. Under suitable(合適的） assumptions(假設）, this method converges(收斂）. This method is a specific case of the forward–backward(前進後退） algorithm(演算法） for monotone(單調） inclusions(包容性） (which includes convex凸面） programming and variational inequalities(變分不等式）).
 
 #### Gradient descent is a special case of mirror descent using the squared Euclidean distance as the given Bregman divergence.
 
 ---
 
-## Theoretical properties
-#### The properties of gradient descent depend on the properties of the objective function and the variant of gradient descent used (for example, if a line search step is used). The assumptions made affect the convergence rate, and other properties, that can be proven for gradient descent. For example, if the objective is assumed to be strongly convex and lipschitz smooth, then gradient descent converges linearly with a fixed step size. Looser assumptions lead to either weaker convergence guarantees or require a more sophisticated step size selection.
+## Theoretical properties(理論性質）
+#### The properties(財產） of gradient descent depend(依賴） on the properties of the objective function(目標函數） and the variant of gradient descent used (for example, if a line search step is used). The assumptions(假設） made affect(影響） the convergence rate(速度）, and other properties, that can be proven(已證實） for gradient descent. For example, if the objective is assumed(假設的） to be strongly(非常地） convex(鼓起；中凸的） and lipschitz smooth, then gradient descent converges linearly(線性） with a fixed step size. Looser(寬鬆的） assumptions(假設） lead to either weaker convergence guarantees(保證） or require(要求） a more sophisticated(複雜的） step size selection(選擇）.
 
 ---
 ## References
