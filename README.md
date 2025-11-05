@@ -110,6 +110,10 @@
 
 # ✨**更新日誌**✨
 
+## 2025/11/05
+### Theme : Translation
+- Gradient_descent.md大部分翻譯完成，剩專有名詞
+
 ## 2025/11/04
 ### Theme : New concept
 - 新增**架構、多層感知器**說明檔案
