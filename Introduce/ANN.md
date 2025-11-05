@@ -68,4 +68,3 @@ Optimizer : 控制權重更新方式（SGD、Adam等）
 
 ## Reference
 1. https://en.wikipedia.org/wiki/Neural_network_(machine_learning)
-2. [麻省理工1](https://web.archive.org/web/20160416111010/http://www.deeplearningbook.org/)
