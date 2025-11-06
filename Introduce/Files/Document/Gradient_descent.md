@@ -8,6 +8,9 @@
 
 ## Description
 ![alt text](../Pictures/Gd_equation1.png)
+#### Gradient descent is based on(基於） the observation that if the multi-variable(多變數） function f(x) is defined and differentiable(可微分的） in a neighborhood of a point a, then f(x) decreases(減少） fastest if one goes from a in the direction of the negative gradient of fat a, - Vf(a). It follows that, if
+#### for a small enough step size or learning rate n € R+, then f(an) ≥ f(an+1). In other words, the term(術語？） nV f(a) is subtracted(減去） from **_a_** because we want to move against(反對） the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of f, and considers the sequence x0, X1, X2, ... such that
+
 ![alt text](../Pictures/Gd_equation2.png)
 ![alt text](../Pictures/Gd_equation3.png)
 ![alt text](../Pictures/Gd_p1.png)
