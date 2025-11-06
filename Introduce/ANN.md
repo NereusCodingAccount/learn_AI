@@ -82,4 +82,5 @@ Optimizer : 控制權重更新方式（SGD、Adam等）
 
 
 ## Reference
-1. https://en.wikipedia.org/wiki/Neural_network_(machine_learning)
+1. [維基百科](https://en.wikipedia.org/wiki/Neural_network_(machine_learning))
+2. [Receptive_field](https://en.wikipedia.org/wiki/Receptive_field)
