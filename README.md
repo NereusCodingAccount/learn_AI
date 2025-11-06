@@ -112,8 +112,10 @@
 
 ## 2025/11/06
 ### Theme : New concept
-- **翻譯**Gradient_descent.md
-- **新增**MLP.md內容
+- **翻譯** Gradient_descent.md
+- **新增** MLP.md 內容
+- **新增** Regularization.md
+- **新增** ANN.md 內容 : **感官野**
 
 ## 2025/11/05
 ### Theme : Translation
