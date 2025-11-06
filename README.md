@@ -110,9 +110,14 @@
 
 # ✨**更新日誌**✨
 
+## 2025/11/06
+### Theme : New concept
+- **翻譯**Gradient_descent.md
+- **新增**MLP.md內容
+
 ## 2025/11/05
 ### Theme : Translation
-- Gradient_descent.md大部分翻譯完成，剩專有名詞
+- Gradient_descent.md大部分翻譯完成，剩**專有名詞**
 
 ## 2025/11/04
 ### Theme : New concept
