@@ -8,8 +8,8 @@
 
 ## Description
 ![alt text](../Pictures/Gd_equation1.png)
-#### Gradient descent is based on(基於） the observation that if the multi-variable(多變數） function **_f(x)_** is defined and differentiable(可微分的） in a neighborhood of a point **_a_**, then **_f(x)_** decreases(減少） fastest if one goes from **_a_** in the direction of the negative gradient of **_f_** at **_a_**, - **_Vf(a)_**. It follows that, if
-#### for a small enough step size or learning rate **_n € R+_**, then **_f(an) ≥ f(an+1)_**. In other words, the term(術語？） **_nV f(a)_** is subtracted(減去） from **_a_** because we want to move against(反對） the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of **_f_**, and considers the sequence(順序） **_x0_**, **_X1_**, **_X2_**, ... such that
+#### Gradient descent is based on(基於) the observation that if the multi-variable(多變數) function **_f(x)_** is defined and differentiable(可微分的) in a neighborhood of a point **_a_**, then **_f(x)_** decreases(減少) fastest if one goes from **_a_** in the direction of the negative gradient of **_f_** at **_a_**, - **_Vf(a)_**. It follows that, if
+#### for a small enough step size or learning rate **_n ∈ R+_**, then **_f(an) ≥ f(an+1)_**. In other words, the term(術語？) **_nV f(a)_** is subtracted(減去) from **_a_** because we want to move against(反對) the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of **_f_**, and considers the sequence(順序) **_x0_**, **_X1_**, **_X2_**, ... such that
 
 ![alt text](../Pictures/Gd_equation2.png)
 #### We have a monotonic sequence
@@ -29,7 +29,7 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 
 ### Choosing the step size and descent direction
 ![alt text](../Pictures/Gd_equation4.png)
-#### Since using a step size n that is too small would slow convergence, and a n too large would lead to overshoot and divergence, finding a good setting of n is an important practical problem. Philip Wolfe also advocated using "clever choices of the [descent] direction" in practice (10) While using a direction that deviates from the steepest descent direction may seem counter-intuitive, the idea is that the smaller slope may be compensated for by being sustained over a much longer distance.
+#### Since using a step size n that is too small would slow convergence, and a n too large would lead to overshoot and divergence, finding a good setting of n is an important practical problem. Philip Wolfe also advocated using **"clever choices of the [ descent ] direction"** in practice (10) While using a direction that deviates from the steepest descent direction may seem counter-intuitive, the idea is that the smaller slope may be compensated for by being sustained over a much longer distance.
 #### To reason about this mathematically, consider a direction Pn and step size in and consider the more general update:
 #### Finding good settings of Pn and n requires some thought. First of all, we would like the update direction to point downhill. Mathematically, letting On denote the angle between - Vf(an) and Pn, this requires that cos On > 0. To say more, we need more information about the objective function that we are optimising. Under the fairly weak assumption that fis continuously differentiable, we may prove that:
 
@@ -39,34 +39,31 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 #### - Forgo the benefits of a clever descent direction by setting P, = V f(an), and use line search to find a suitable step-size Yn, such as one that satisfies the Wolfe conditions. A more economic way of choosing learning rates is backtracking line search, a method that has both good theoretical guarantees and experimental results. Note that one does not need to choose Pn to be the gradient; any direction that has positive inner product with the gradient will result in a reduction of the function value (for a sufficiently small value of **_nn_**).
 
 ![alt text](../Pictures/Gd_equation6.png)
-#### - Assuming that f is twice-differentiable, use its Hessian V2 f to estimate
-#### Then choose Pn and in by optimising
-inequality (1).
+#### - Assuming that **_f_** is twice-differentiable, use its Hessian **_V² f_** to estimate
+#### Then choose Pn and in by optimising inequality (1).
 #### - Assuming that V f is Lipschitz, use its Lipschitz constant L to bound
-#### Then choose Pn and An by optimising inequality
-（1）.
-#### Build a custom model of {        } for f. Then choose Pn and An
-by optimising inequality (1).
+#### Then choose **_Pn_** and **_ŋn_** by optimising inequality(1).
+#### Build a custom model of {        } for **_f_**. Then choose **_Pn_** and **_ŋn_** by optimising inequality (1).
 #### - Under stronger assumptions on the function f such as convexity, more advanced techniques may be possible.
 #### Usually by following one of the recipes above, convergence to a local minimum can be guaranteed.
-When the function fis convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
+#### When the function **_f_** is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
 
 ---
 
 ## Solution of a linear system(線型函數的解)
-Gradient descent can be used to solve a **system of linear equations**
+#### Gradient descent can be used to solve a **system of linear equations**
 ![alt text](../Pictures/Gd_S_ls1.png)
 
-reformulated(重新配方) as a quadratic(二次函數) minimization(最小化) problem. If the system matrix **_A_** is real symmetric(對稱) and positive-definite(正定矩陣), an objective function is defined(定義) as the quadratic function, with minimization of
+#### reformulated(重新配方) as a quadratic(二次函數) minimization(最小化) problem. If the system matrix **_A_** is real symmetric(對稱) and positive-definite(正定矩陣), an objective function is defined(定義) as the quadratic function, with minimization of
 ![alt text](../Pictures/Gd_S_ls2.png)
 
-so that
+#### so that
 ![alt text](../Pictures/Gd_S_ls3.png)
 
-For a general real matrix(矩陣) **_A_**, linear(線型) least(最小)squares(平方法) define(定義)
+#### For a general real matrix(矩陣) **_A_**, linear(線型) least(最小)squares(平方法) define(定義)
 ![alt text](../Pictures/Gd_S_ls4.png)
 
-In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數)is used, in which case
+#### In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數)is used, in which case
 ![alt text](../Pictures/Gd_S_ls5.png)
 
 ![alt text](../Pictures/Gd_S_ls6.png)
@@ -75,12 +72,12 @@ In traditional linear least squares for real **_A_** and **_b_** the **Euclidean
 
 ### Geometric(幾何) behavior(行為) and residual(殘差) orthogonality(正交性)
 ![alt text](../Pictures/Gd_S_ls8.png)
-As shown in the image on the right, steepest descent converges(收斂) slowly due to the high condition number of**_A_**, and the orthogonality(正交性) of residuals(殘差) forces(力量) each new direction to undo(撤銷) the overshoot(過衝) from the previous(以前的) step. The result is a path that zigzags(蜿蜒) toward(朝向) the solution. This inefficiency(效率低下) is one reason **conjugate gradient(共軛梯度)** or preconditioning methods(預處理方法) are preferred(首選).
+#### As shown in the image on the right, steepest descent converges(收斂) slowly due to the high condition number of**_A_**, and the orthogonality(正交性) of residuals(殘差) forces(力量) each new direction to undo(撤銷) the overshoot(過衝) from the previous(以前的) step. The result is a path that zigzags(蜿蜒) toward(朝向) the solution. This inefficiency(效率低下) is one reason **conjugate gradient(共軛梯度)** or preconditioning methods(預處理方法) are preferred(首選).
 
 ---
 
 ## Solution of a non-linear system(非線型系統)
-Gradient descent can also be used to solve a system of nonlinear equations. Below(以下) is an example that shows how to use the gradient descent to solve for three unknown variables(未知變數), **_x1_**, **_x2_**, and **_x3_**. This example shows one iteration(迭代) of the gradient descent.
+#### Gradient descent can also be used to solve a system of nonlinear equations. Below(以下) is an example that shows how to use the gradient descent to solve for three unknown variables(未知變數), **_x1_**, **_x2_**, and **_x3_**. This example shows one iteration(迭代) of the gradient descent.
 
 ![alt text](../Pictures/Gd_nl_S1.png)
 ![alt text](../Pictures/Gd_nl_S2.png)
@@ -120,14 +117,14 @@ Gradient descent can also be used to solve a system of nonlinear equations. Belo
 
 ## Extensions
 
-#### Gradient descent can be extended(延長） to handle(處理） constraints(約束） by including(包含） a projection(投射） onto the set of constraints. This method is only feasible(可行的） when the projection is efficiently(高效率） computable(可計算的） on a computer. Under suitable(合適的） assumptions(假設）, this method converges(收斂）. This method is a specific case of the forward–backward(前進後退） algorithm(演算法） for monotone(單調） inclusions(包容性） (which includes convex凸面） programming and variational inequalities(變分不等式）).
+#### Gradient descent can be extended(延長) to handle(處理) constraints(約束) by including(包含) a projection(投射) onto the set of constraints. This method is only feasible(可行的) when the projection is efficiently(高效率) computable(可計算的) on a computer. Under suitable(合適的) assumptions(假設), this method converges(收斂). This method is a specific case of the forward–backward(前進後退) algorithm(演算法) for monotone(單調) inclusions(包容性) (which includes convex凸面) programming and variational inequalities(變分不等式)).
 
 #### Gradient descent is a special case of mirror descent using the squared Euclidean distance as the given Bregman divergence.
 
 ---
 
-## Theoretical properties(理論性質）
-#### The properties(財產） of gradient descent depend(依賴） on the properties of the objective function(目標函數） and the variant of gradient descent used (for example, if a line search step is used). The assumptions(假設） made affect(影響） the convergence rate(速度）, and other properties, that can be proven(已證實） for gradient descent. For example, if the objective is assumed(假設的） to be strongly(非常地） convex(鼓起；中凸的） and lipschitz smooth, then gradient descent converges linearly(線性） with a fixed step size. Looser(寬鬆的） assumptions(假設） lead to either weaker convergence guarantees(保證） or require(要求） a more sophisticated(複雜的） step size selection(選擇）.
+## Theoretical properties(理論性質)
+#### The properties(財產) of gradient descent depend(依賴) on the properties of the objective function(目標函數) and the variant of gradient descent used (for example, if a line search step is used). The assumptions(假設) made affect(影響) the convergence rate(速度), and other properties, that can be proven(已證實) for gradient descent. For example, if the objective is assumed(假設的) to be strongly(非常地) convex(鼓起；中凸的) and lipschitz smooth, then gradient descent converges linearly(線性) with a fixed step size. Looser(寬鬆的) assumptions(假設) lead to either weaker convergence guarantees(保證) or require(要求) a more sophisticated(複雜的) step size selection(選擇).
 
 ---
 ## References
