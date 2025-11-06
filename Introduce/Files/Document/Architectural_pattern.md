@@ -16,7 +16,7 @@
 
 #### 「殘差連接」讓輸入的訊號直接跳過中間幾層，再與輸出相加，幫助訊息保留。
 
-![alt text](image.png)
+![alt text](../Pictures/Ap1.png)
 
 ---
 
