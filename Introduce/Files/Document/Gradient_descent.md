@@ -8,11 +8,18 @@
 
 ## Description
 ![alt text](../Pictures/Gd_equation1.png)
-#### Gradient descent is based on(基於） the observation that if the multi-variable(多變數） function f(x) is defined and differentiable(可微分的） in a neighborhood of a point a, then f(x) decreases(減少） fastest if one goes from a in the direction of the negative gradient of fat a, - Vf(a). It follows that, if
-#### for a small enough step size or learning rate n € R+, then f(an) ≥ f(an+1). In other words, the term(術語？） nV f(a) is subtracted(減去） from **_a_** because we want to move against(反對） the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of f, and considers the sequence x0, X1, X2, ... such that
+#### Gradient descent is based on(基於） the observation that if the multi-variable(多變數） function f(x) is defined and differentiable(可微分的） in a neighborhood of a point a, then f(x) decreases(減少） fastest if one goes from a in the direction of the negative gradient of **_f_** at **_a_**, - **_Vf(a)_**CNN. It follows that, if
+#### for a small enough step size or learning rate **_n € R+_**, then **_f(an) ≥ f(an+1)_**. In other words, the term(術語？） **_nV f(a)_** is subtracted(減去） from **_a_** because we want to move against(反對） the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of **_f_**, and considers the sequence(順序） **_x0_**, **_X1_**, **_X2_**, ... such that
 
 ![alt text](../Pictures/Gd_equation2.png)
+#### We have a monotonic sequence
+#### so the sequence (*n) converges to the desired local minimum. Note that the value of the step size n is allowed to change at every iteration.
+#### It is possible to guarantee the convergence to a local minimum under certain assumptions on the function f (for example, f convex and V f Lipschitz) and particular choices of n. Those include the sequence
+
 ![alt text](../Pictures/Gd_equation3.png)
+#### as in the Barzilai-Borwein method, 819 or a sequence n satisfying the Wolfe conditions (which can be found by using line search). When the function f is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
+#### This process is illustrated in the adjacent picture. Here, f is assumed to be defined on the plane, and that its graph has a bowl shape. The blue curves are the contour lines, that is, the regions on which the value of fis constant. A red arrow originating at a point shows the direction of the negative gradient at that point. Note that the (negative) gradient at a point is orthogonal to the contour line going through that point. We see that gradient descent leads us to the bottom of the bowl, that is, to the point where the value of the function f is minimal.
+
 ![alt text](../Pictures/Gd_p1.png)
 
 ### An analogy(類比) for understanding gradient descent
