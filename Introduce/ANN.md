@@ -18,8 +18,23 @@
 
 ## 設計考量（實務要點）
 - 深度（層數）vs 寬度（每層神經元數）：影響表現與過擬合風險。  
-- 感受野（Receptive Field）：尤其在 CNN 中決定能抓多大範圍的特徵。  
-- 正則化：Dropout、權重衰減、資料擴增、早停等避免過擬合。  
+- 感受野（Receptive Field）：尤其在 CNN 中決定能抓多大範圍的特徵。 
+<details>
+<summary>About Receptive Field</summary>
+
+## In the context of neural networks
+
+#### The term receptive field is also used in the context of artificial neural networks, most often in relation to convolutional neural networks (CNNs). So, in a neural network context, the receptive field is defined as the size of the region in the input that produces the feature. Basically, it is a measure of association of an output feature (of any layer) to the input region (patch). It is important to note that the idea of receptive fields applies to local operations (i.e. convolution, pooling). As an example, in motion-based tasks, like video prediction and optical flow estimation, large motions need to be captured (displacements of pixels in a 2D grid), so an adequate receptive field is required. Specifically, the receptive field should be sufficient if it is larger than the largest flow magnitude of the dataset. There are a lot of ways that one can increase the receptive field on a CNN.
+
+#### When used in this sense, the term adopts a meaning reminiscent of receptive fields in actual biological nervous systems. CNNs have a distinct architecture, designed to mimic the way in which real animal brains are understood to function; instead of having every neuron in each layer connect to all neurons in the next layer (Multilayer perceptron), the neurons are arranged in a 3-dimensional structure in such a way as to take into account the spatial relationships between different neurons with respect to the original data. Since CNNs are used primarily in the field of computer vision, the data that the neurons represent is typically an image; each input neuron represents one pixel from the original image. The first layer of neurons is composed of all the input neurons; neurons in the next layer will receive connections from some of the input neurons (pixels), but not all, as would be the case in a MLP and in other traditional neural networks. Hence, instead of having each neuron receive connections from all neurons in the previous layer, CNNs use a receptive field-like layout in which each neuron receives connections only from a subset of neurons in the previous (lower) layer. The receptive field of a neuron in one of the lower layers encompasses only a small area of the image, while the receptive field of a neuron in subsequent (higher) layers involves a combination of receptive fields from several (but not all) neurons in the layer before (i. e. a neuron in a higher layer "looks" at a larger portion of the image than does a neuron in a lower layer). In this way, each successive layer is capable of learning increasingly abstract features of the original image. The use of receptive fields in this fashion is thought to give CNNs an advantage in recognizing visual patterns when compared to other types of neural networks.
+
+#### CNN layers arranged in three dimensions :
+
+![alt text](./Files/Pictures/RF.png)
+
+</details>
+
+- [正則化](./Files/Document/Regularization.md)：Dropout、權重衰減、資料擴增、早停等避免過擬合。  
 - 正規化層：BatchNorm / LayerNorm 幫助穩定與加速訓練。  
 - 訓練細節：學習率與其排程（scheduler）、批次大小、初始化方法對收斂影響最大。  
 - 模組化：把常用塊（conv‑bn‑relu、residual block）封裝以利復用與測試。
