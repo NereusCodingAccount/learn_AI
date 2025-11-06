@@ -29,8 +29,27 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 
 ### Choosing the step size and descent direction
 ![alt text](../Pictures/Gd_equation4.png)
+#### Since using a step size n that is too small would slow convergence, and a n too large would lead to overshoot and divergence, finding a good setting of n is an important practical problem. Philip Wolfe also advocated using "clever choices of the [descent] direction" in practice (10) While using a direction that deviates from the steepest descent direction may seem counter-intuitive, the idea is that the smaller slope may be compensated for by being sustained over a much longer distance.
+#### To reason about this mathematically, consider a direction Pn and step size in and consider the more general update:
+#### Finding good settings of Pn and n requires some thought. First of all, we would like the update direction to point downhill. Mathematically, letting On denote the angle between - Vf(an) and Pn, this requires that cos On > 0. To say more, we need more information about the objective function that we are optimising. Under the fairly weak assumption that fis continuously differentiable, we may prove that:
+
 ![alt text](../Pictures/Gd_equation5.png)
+#### This inequality implies that the amount by which we can be sure the function f is decreased depends on a trade off between the two terms in square brackets. The first term in square brackets measures the angle between the descent direction and the negative gradient. The second term measures how quickly the gradient changes along the descent direction.
+#### In principle inequality (1) could be optimized over P, and n to choose an optimal step size and direction. The problem is that evaluating the second term in square brackets requires evaluating Vf(an - thnPn), and extra gradient evaluations are generally expensive and undesirable. Some ways around this problem are:
+#### - Forgo the benefits of a clever descent direction by setting P, = V f(an), and use line search to find a suitable step-size Yn, such as one that satisfies the Wolfe conditions. A more economic way of choosing learning rates is backtracking line search, a method that has both good theoretical guarantees and experimental results. Note that one does not need to choose Pn to be the gradient; any direction that has positive inner product with the gradient will result in a reduction of the function value (for a sufficiently small value of **_nn_**).
+
 ![alt text](../Pictures/Gd_equation6.png)
+#### - Assuming that f is twice-differentiable, use its Hessian V2 f to estimate
+#### Then choose Pn and in by optimising
+inequality (1).
+#### - Assuming that V f is Lipschitz, use its Lipschitz constant L to bound
+#### Then choose Pn and An by optimising inequality
+（1）.
+#### Build a custom model of {        } for f. Then choose Pn and An
+by optimising inequality (1).
+#### - Under stronger assumptions on the function f such as convexity, more advanced techniques may be possible.
+#### Usually by following one of the recipes above, convergence to a local minimum can be guaranteed.
+When the function fis convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
 
 ---
 
