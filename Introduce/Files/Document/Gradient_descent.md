@@ -39,7 +39,7 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 #### - Forgo the benefits of a clever descent direction by setting P, = V f(an), and use line search to find a suitable step-size Yn, such as one that satisfies the Wolfe conditions. A more economic way of choosing learning rates is backtracking line search, a method that has both good theoretical guarantees and experimental results. Note that one does not need to choose Pn to be the gradient; any direction that has positive inner product with the gradient will result in a reduction of the function value (for a sufficiently small value of **_nn_**).
 
 ![alt text](../Pictures/Gd_equation6.png)
-#### - Assuming that **_f_** is twice-differentiable, use its Hessian **_V² f_** to estimate
+#### – Assuming that **_f_** is twice-differentiable, use its Hessian **_V² f_** to estimate
 #### Then choose Pn and in by optimising inequality (1).
 #### - Assuming that V f is Lipschitz, use its Lipschitz constant L to bound
 #### Then choose **_Pn_** and **_ŋn_** by optimising inequality(1).
