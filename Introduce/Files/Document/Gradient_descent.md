@@ -6,15 +6,15 @@
 
 ---
 
-## Description (描述）
+## Description (描述)
 ![alt text](../Pictures/Gd_equation1.png)
 #### Gradient descent is based on(基於) the observation that if the multi-variable(多變數) function **_f(x)_** is defined and differentiable(可微分的) in a neighborhood of a point **_a_**, then **_f(x)_** decreases(減少) fastest if one goes from **_a_** in the direction of the negative gradient of **_f_** at **_a_**, - **_Vf(a)_**. It follows that, if
 #### for a small enough step size or learning rate **_n ∈ R+_**, then **_f(an) ≥ f(an+1)_**. In other words, the term(術語？) **_nV f(a)_** is subtracted(減去) from **_a_** because we want to move against(反對) the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of **_f_**, and considers the sequence(順序) **_x0_**, **_X1_**, **_X2_**, ... such that
 
 ![alt text](../Pictures/Gd_equation2.png)
-#### We have a monotonic sequence(單調函數）
-#### so the sequence (**_Xn_**) converges(收斂） to the desired(想要） local minimum. Note that the value of the step size **_n_** is allowed to change at every iteration(迭代）.
-#### It is possible to guarantee(保證） the convergence to a local minimum under certain assumptions(假設） on the function **_f_** (for example, **_f_** convex(凸面） and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
+#### We have a monotonic sequence(單調函數)
+#### so the sequence (**_Xn_**) converges(收斂) to the desired(想要) local minimum. Note that the value of the step size **_n_** is allowed to change at every iteration(迭代).
+#### It is possible to guarantee(保證) the convergence to a local minimum under certain assumptions(假設) on the function **_f_** (for example, **_f_** convex(凸面) and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
 
 ![alt text](../Pictures/Gd_equation3.png)
 #### as in the Barzilai-Borwein method,  or a sequence **_n_** satisfying the Wolfe conditions (which can be found by using line search). When the function **_f_** is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
@@ -23,9 +23,9 @@
 ![alt text](../Pictures/Gd_p1.png)
 
 ### An analogy(類比) for understanding gradient descent
-The basic intuition(基本直覺)behind gradient descent can be illustrated(闡述)by a hypothetical scenario(假設場景). People are stuck(卡住) in the mountains and are trying to get down (i.e.(也就是說), trying to find the global minimum(全域最小值)). There is heavy fog(霧) such that visibility(能見度)is extremely(極為) low. Therefore(所以), the path down the mountain is not visible, so they must use local information to find the minimum. They can use the method(方法)of gradient descent, which involves(涉及) looking at the steepness(陡峭度) of the hill at their current position(目前位置), then proceeding(繼續)in the direction(方向)with the steepest(最陡峭)descent (i.e., downhill(下坡)). If they were trying to find the top of the mountain (i.e., the maximum), then they would proceed(繼續) in the direction of steepest ascent(上升) (i.e., uphill(上坡)). Using this method, they would eventually(最終) find their way down the mountain or possibly get stuck in some hole (i.e., local minimum or saddle point(鞍點)), like a mountain lake. However, assume(認為)also that the steepness(陡峭度) of the hill is not **"immediately obvious(顯而易見)"** with simple observation, but rather(相當)it requires(要求) a sophisticated(複雜的)instrument(工具、機械、儀器)to measure, which the people happen to have at that moment(片刻). It takes quite some time to measure the steepness of the hill with the instrument. Thus(因此), they should minimize(最小化) their use of the instrument if they want to get down the mountain before sunset. The difficulty then is choosing the frequency(頻率) at which they should measure the steepness of the hill so as not to go off track(追蹤).
+#### The basic intuition(基本直覺)behind gradient descent can be illustrated(闡述)by a hypothetical scenario(假設場景). People are stuck(卡住) in the mountains and are trying to get down (i.e.(也就是說), trying to find the global minimum(全域最小值)). There is heavy fog(霧) such that visibility(能見度)is extremely(極為) low. Therefore(所以), the path down the mountain is not visible, so they must use local information to find the minimum. They can use the method(方法)of gradient descent, which involves(涉及) looking at the steepness(陡峭度) of the hill at their current position(目前位置), then proceeding(繼續)in the direction(方向)with the steepest(最陡峭)descent (i.e., downhill(下坡)). If they were trying to find the top of the mountain (i.e., the maximum), then they would proceed(繼續) in the direction of steepest ascent(上升) (i.e., uphill(上坡)). Using this method, they would eventually(最終) find their way down the mountain or possibly get stuck in some hole (i.e., local minimum or saddle point(鞍點)), like a mountain lake. However, assume(認為)also that the steepness(陡峭度) of the hill is not **"immediately obvious(顯而易見)"** with simple observation, but rather(相當)it requires(要求) a sophisticated(複雜的)instrument(工具、機械、儀器)to measure, which the people happen to have at that moment(片刻). It takes quite some time to measure the steepness of the hill with the instrument. Thus(因此), they should minimize(最小化) their use of the instrument if they want to get down the mountain before sunset. The difficulty then is choosing the frequency(頻率) at which they should measure the steepness of the hill so as not to go off track(追蹤).
 
-In this analogy(類比), the people represent the algorithm(演算法), and the path taken down(紀錄)the mountain represents(代表)the sequence(順序)of parameter(範圍)settings that the algorithm will explore(探索). The steepness of the hill represents the slope(坡)of the function at that point. The instrument used to measure steepness is differentiation(差異化). The direction(方向)they choose to travel in aligns(對齊) with the gradient of the function at that point. The amount(數量) of time they travel before taking another measurement(測量) is the step size(步長).
+#### In this analogy(類比), the people represent the algorithm(演算法), and the path taken down(紀錄)the mountain represents(代表)the sequence(順序)of parameter(範圍)settings that the algorithm will explore(探索). The steepness of the hill represents the slope(坡)of the function at that point. The instrument used to measure steepness is differentiation(差異化). The direction(方向)they choose to travel in aligns(對齊) with the gradient of the function at that point. The amount(數量) of time they travel before taking another measurement(測量) is the step size(步長).
 
 ### Choosing the step size and descent direction
 ![alt text](../Pictures/Gd_equation4.png)
@@ -71,7 +71,7 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 #### For example, for real symmetric and positive-definite matrix **_A_**, a simple algorithm can be as follows,
 
 ![alt text](../Pictures/Gd_S_ls7.png)
-#### To avoid multiplying by **_A_** twice per iteration, we note that **_x_** := **_x + yr_** implies r := r - nAr, which gives the traditional algorithm,
+#### To avoid multiplying by **_A_** twice per iteration, we note that **_x_** := **_x + yr_** implies **_r := r - nAr_**, which gives the traditional algorithm,
 
 ### Geometric(幾何) behavior(行為) and residual(殘差) orthogonality(正交性)
 ![alt text](../Pictures/Gd_S_ls8.png)
