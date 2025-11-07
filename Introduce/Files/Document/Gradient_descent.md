@@ -113,6 +113,11 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 ### Fast gradient methods
 
 ![alt text](../Pictures/Gd_M.png)
+#### Methods based on Newton's method and inversion of the Hessian using conjugate gradient techniques can be better alternatives. Generally, such methods converge in fewer iterations, but the cost of each iteration is higher. An example is the BFGS method which consists in calculating on every step a matrix by which the gradient vector is multiplied to go into a "better" direction, combined with a more sophisticated line search algorithm, to find the "best" value of **_n_**. For extremely large problems, where the computer-memory issues dominate, a limited-memory method such as L-BFGS should be used instead of BFGS or the steepest descent.
+#### While it is sometimes possible to substitute gradient descent for a local search algorithm, gradient descent is not in the same family: although it is an iterative method for local optimization, it relies on an objective function's gradient rather than an explicit exploration of a solution space.
+#### Gradient descent can be viewed as applying Euler's method for solving ordinary differential equations **_x' (t) = - Vf(xt))_** to agradient flow. In turn, this equation may be derived as an optimal controller for the control system **_x' (t) = u(t)_** with **_u(t)_** given in feedback form **_u(t) = -Vf(x(t))_**.
+
+
 
 ### Momentum(動力)  or heavy ball method
 
