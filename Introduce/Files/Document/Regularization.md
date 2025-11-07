@@ -95,18 +95,66 @@
 
 #### During training, this algorithm takes **_O(d³+nd²)_** time. The terms correspond to the matrix inversion and calculating **_XTX_**, respectively. Testing takes **_O(nd)_** time.
 
+---
 
+## Early stopping
 
+#### Early stopping can be viewed as regularization in time. Intuitively, a training procedure such as gradient descent tends to learn more and more complex functions with increasing iterations. By regularizing for time, model complexity can be controlled, improving generalization.
 
+#### Early stopping is implemented using one data set for training, one statistically independent data set for validation and another for testing. The model is trained until performance on the validation set no longer improves and then applied to the test set.
 
+![alt text](../Pictures/R_Es1.png)
+#### Consider the finite approximation of Neumann series for an invertible matrix **_A_** where **_‖I−A‖<1_**:
+#### This can be used to approximate the analytical solution of unregularized least squares, if **_γ_** is introduced to ensure the norm is less than one.
 
+#### The exact solution to the unregularized least squares learning problem minimizes the empirical error, but may fail. By limiting **_T_**, the only free parameter in the algorithm above, the problem is regularized for time, which may improve its generalization.
+#### The algorithm above is equivalent to restricting the number of gradient descent iterations for the empirical risk
 
+![alt text](../Pictures/R_Es2.png)
 
+---
 
+## Regularizers for sparsity
+#### Assume that a dictionary **_ϕj_** with dimension **_p_** is given such that a function in the function space can be expressed as:
+![alt text](../Pictures/regulatization_6.png)
 
+#### Enforcing a sparsity constraint on **_w_** can lead to simpler and more interpretable models. This is useful in many real-life applications such as computational biology. An example is developing a simple predictive test for a disease in order to minimize the cost of performing medical tests while maximizing predictive power.
 
+#### A sensible sparsity constraint is the **_L0_** norm **_‖w‖0_**, defined as the number of non-zero elements in **_w_**. Solving a **_L0_** regularized learning problem, however, has been demonstrated to be NP-hard.
 
+#### The **_L1_** norm (see also Norms) can be used to approximate the optimal **_L0_** norm via convex relaxation. It can be shown that the **_L1_** norm induces sparsity. In the case of least squares, this problem is known as LASSO in statistics and basis pursuit in signal processing.
 
+![alt text](../Pictures/regulatization_7.png)
+
+#### Elastic net regularization tends to have a grouping effect, where correlated input features are assigned equal weights.
+
+#### Elastic net regularization is commonly used in practice and is implemented in many machine learning libraries.
+
+### Proximal methods
+
+#### While the **_L1_** norm does not result in an NP-hard problem, the **_L1_** norm is convex but is not strictly differentiable due to the kink at **_x = 0_**. Subgradient methods which rely on the subderivative can be used to solve **_L1_** regularized learning problems. However, faster convergence can be achieved through proximal methods.
+
+![alt text](../Pictures/regulatization_8.png)
+
+### Group sparsity without overlaps
+
+#### Groups of features can be regularized by a sparsity constraint, which can be useful for expressing certain prior knowledge into an optimization problem.
+
+#### In the case of a linear model with non-overlapping known groups, a regularizer can be defined:
+
+![alt text](../Pictures/regulatization_9.png)
+
+#### This can be viewed as inducing a regularizer over the **_L2_** norm over members of each group followed by an **_L1_** norm over groups.
+
+#### This can be solved by the proximal method, where the proximal operator is a block-wise soft-thresholding function:
+
+#### The algorithm described for group sparsity without overlaps can be applied to the case where groups do overlap, in certain situations. This will likely result in some groups with all zero elements, and other groups with some non-zero and some zero elements.
+
+#### If it is desired to preserve the group structure, a new regularizer can be defined:
+
+![alt text](../Pictures/regulatization_10.png)
+
+#### For each **_wg_**, **_w¯g_** is defined as the vector such that the restriction of **_w¯g_** to the group **_g_** equals wg and all other entries of **_w¯g_** are zero. The regularizer finds the optimal disintegration of **_w_** into parts. It can be viewed as duplicating all elements that exist in multiple groups. Learning problems with this regularizer can also be solved with the proximal method with a complication. The proximal operator cannot be computed in closed form, but can be effectively solved iteratively, inducing an inner iteration within the proximal method iteration.
 
 ---
 
