@@ -6,15 +6,15 @@
 
 ---
 
-## Description
+## Description (描述）
 ![alt text](../Pictures/Gd_equation1.png)
 #### Gradient descent is based on(基於) the observation that if the multi-variable(多變數) function **_f(x)_** is defined and differentiable(可微分的) in a neighborhood of a point **_a_**, then **_f(x)_** decreases(減少) fastest if one goes from **_a_** in the direction of the negative gradient of **_f_** at **_a_**, - **_Vf(a)_**. It follows that, if
 #### for a small enough step size or learning rate **_n ∈ R+_**, then **_f(an) ≥ f(an+1)_**. In other words, the term(術語？) **_nV f(a)_** is subtracted(減去) from **_a_** because we want to move against(反對) the gradient, toward the local minimum. With this observation in mind, one starts with a guess **_x0_** for a local minimum of **_f_**, and considers the sequence(順序) **_x0_**, **_X1_**, **_X2_**, ... such that
 
 ![alt text](../Pictures/Gd_equation2.png)
-#### We have a monotonic sequence
-#### so the sequence (**_Xn_**) converges to the desired local minimum. Note that the value of the step size **_n_** is allowed to change at every iteration.
-#### It is possible to guarantee the convergence to a local minimum under certain assumptions on the function **_f_** (for example, **_f_** convex and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
+#### We have a monotonic sequence(單調函數）
+#### so the sequence (**_Xn_**) converges(收斂） to the desired(想要） local minimum. Note that the value of the step size **_n_** is allowed to change at every iteration(迭代）.
+#### It is possible(保證） to guarantee the convergence to a local minimum under certain assumptions on the function **_f_** (for example, **_f_** convex and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
 
 ![alt text](../Pictures/Gd_equation3.png)
 #### as in the Barzilai-Borwein method,  or a sequence **_n_** satisfying the Wolfe conditions (which can be found by using line search). When the function **_f_** is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
