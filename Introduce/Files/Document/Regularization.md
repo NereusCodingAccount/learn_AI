@@ -7,11 +7,11 @@
 
 ## ill-posed problem means it's not a **well-posed problem** 
 
-## What is well-posed problem ?
-### In mathematics, a well-posed problem is one for which the following properties hold:
-#### 1. The problem has a solution
-#### 2. The solution is unique(獨特的)
-#### 3. The solution's behavior changes continuously with the initial conditions.
+### What is well-posed problem ?
+#### In mathematics, a well-posed problem is one for which the following properties hold:
+##### 1. The problem has a solution
+##### 2. The solution is unique(獨特的)
+##### 3. The solution's behavior changes continuously with the initial conditions.
 
 </details>
 
