@@ -63,15 +63,21 @@ In this analogy(類比), the people represent the algorithm(演算法), and the 
 #### For a general real matrix(矩陣) **_A_**, linear(線型) least(最小)squares(平方法) define(定義)
 ![alt text](../Pictures/Gd_S_ls4.png)
 
-#### In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數)is used, in which case
+#### In traditional linear least squares for real **_A_** and **_b_** the **Euclidean norm(歐幾里德範數)** is used, in which case
 ![alt text](../Pictures/Gd_S_ls5.png)
 
 ![alt text](../Pictures/Gd_S_ls6.png)
+#### The line search minimization, finding the locally optimal step size n on every iteration, can be performed analytically for quadratic functions, and explicit formulas for the locally optimal y are known.
+#### For example, for real symmetric and positive-definite matrix **_A_**, a simple algorithm can be as follows,
 
 ![alt text](../Pictures/Gd_S_ls7.png)
+#### To avoid multiplying by **_A_** twice per iteration, we note that **_x_** := **_x + yr_** implies r := r - nAr, which gives the traditional algorithm,
 
 ### Geometric(幾何) behavior(行為) and residual(殘差) orthogonality(正交性)
 ![alt text](../Pictures/Gd_S_ls8.png)
+#### In steepest descent applied to solving **_Ax = b_**, where **_A_** is symmetric positive-definite, the residual vectors **_rk = b - Axk_** are orthogonal across iterations:
+
+#### Because each step is taken in the steepest direction, steepest-descent steps alternate between directions aligned with the extreme axes of the elongated level sets. When **_k(A)_** is large, this produces a characteristic zigzag path. The poor conditioning of **_A_** is the primary cause of the slow convergence, and orthogonality of successive residuals reinforces this alternation.
 #### As shown in the image on the right, steepest descent converges(收斂) slowly due to the high condition number of**_A_**, and the orthogonality(正交性) of residuals(殘差) forces(力量) each new direction to undo(撤銷) the overshoot(過衝) from the previous(以前的) step. The result is a path that zigzags(蜿蜒) toward(朝向) the solution. This inefficiency(效率低下) is one reason **conjugate gradient(共軛梯度)** or preconditioning methods(預處理方法) are preferred(首選).
 
 ---
