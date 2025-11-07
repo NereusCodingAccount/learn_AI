@@ -14,7 +14,7 @@
 ![alt text](../Pictures/Gd_equation2.png)
 #### We have a monotonic sequence(單調函數）
 #### so the sequence (**_Xn_**) converges(收斂） to the desired(想要） local minimum. Note that the value of the step size **_n_** is allowed to change at every iteration(迭代）.
-#### It is possible(保證） to guarantee the convergence to a local minimum under certain assumptions on the function **_f_** (for example, **_f_** convex and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
+#### It is possible to guarantee(保證） the convergence to a local minimum under certain assumptions(假設） on the function **_f_** (for example, **_f_** convex(凸面） and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
 
 ![alt text](../Pictures/Gd_equation3.png)
 #### as in the Barzilai-Borwein method,  or a sequence **_n_** satisfying the Wolfe conditions (which can be found by using line search). When the function **_f_** is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
