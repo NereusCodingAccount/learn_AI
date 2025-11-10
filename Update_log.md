@@ -2,10 +2,15 @@
 
 為了README.md的檔案簡化，以後的更新會放在這
 
+## 2025/11/10
+### Theme : New concept
+- **新增** refularization.md 內容
+- **新增** 
+
 ## 2025/11/06
 ### Theme : New concept
 - **新增** refularization.md 內容
-- **新增** Update_log.md 更新日誌
+- **新增** 正規化層介紹
 
 
 ## 2025/11/06
