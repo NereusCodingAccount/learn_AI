@@ -53,7 +53,7 @@
 
 ## Classification
 
-![alt text](../Pictures/regularyzation_1.png)
+![alt text](../Pictures/regularization_1.png)
 
 #### where **_V_** is an underlying loss function that describes the cost of predicting **_f(x)_** when the label is **_y_**, such as the square loss or hinge loss; and **_λ_** is a parameter which controls the importance of the regularization term. **_R(f)_** is typically chosen to impose a penalty on the complexity of **_f_**. Concrete notions of complexity used include restrictions for smoothness and bounds on the vector space norm.
 
@@ -69,13 +69,13 @@
 
 #### The goal of this learning problem is to find a function that fits or predicts the outcome (label) that minimizes the expected error over all possible inputs and labels. The expected error of a function **_fn_** is:
 
-![alt text](../Pictures/regularyzation_2.png)
+![alt text](../Pictures/regularization_2.png)
 
 #### where **_X_** and **_Y_** are the domains of input data **_x_** and their labels **_y_** respectively.
 
 #### Typically in learning problems, only a subset of input data and labels are available, measured with some noise. Therefore, the expected error is unmeasurable, and the best surrogate available is the empirical error over the **_N_** available samples:
 
-![alt text](../Pictures/regularyzation_3.png)
+![alt text](../Pictures/regularization_3.png)
 
 #### Without bounds on the complexity of the function space (formally, the reproducing kernel Hilbert space) available, a model will be learned that incurs zero loss on the surrogate empirical error. If measurements (e.g. of **_xi_**) were made with noise, this model may suffer from overfitting and display poor expected error. Regularization introduces a penalty for exploring certain regions of the function space used to build the model, which can improve generalization.
 
@@ -85,13 +85,13 @@
 
 #### These techniques are named for Andrey Nikolayevich Tikhonov, who applied regularization to integral equations and made important contributions in many other areas.
 
-![alt text](../Pictures/regularyzation_4.png)
+![alt text](../Pictures/regularization_4.png)
 
 #### As the **_L2_** norm is differentiable, learning can be advanced by gradient descent. 
 
 ### Tikhonov-regularized least squares
 
-![alt text](../Pictures/regularyzation_5.png)
+![alt text](../Pictures/regularization_5.png)
 
 #### During training, this algorithm takes **_O(d³+nd²)_** time. The terms correspond to the matrix inversion and calculating **_XTX_**, respectively. Testing takes **_O(nd)_** time.
 
@@ -116,7 +116,7 @@
 
 ## Regularizers for sparsity
 #### Assume that a dictionary **_ϕj_** with dimension **_p_** is given such that a function in the function space can be expressed as:
-![alt text](../Pictures/regulatization_6.png)
+![alt text](../Pictures/regularization_6.png)
 
 #### Enforcing a sparsity constraint on **_w_** can lead to simpler and more interpretable models. This is useful in many real-life applications such as computational biology. An example is developing a simple predictive test for a disease in order to minimize the cost of performing medical tests while maximizing predictive power.
 
@@ -124,7 +124,7 @@
 
 #### The **_L1_** norm (see also Norms) can be used to approximate the optimal **_L0_** norm via convex relaxation. It can be shown that the **_L1_** norm induces sparsity. In the case of least squares, this problem is known as LASSO in statistics and basis pursuit in signal processing.
 
-![alt text](../Pictures/regulatization_7.png)
+![alt text](../Pictures/regularization_7.png)
 
 #### Elastic net regularization tends to have a grouping effect, where correlated input features are assigned equal weights.
 
@@ -134,7 +134,7 @@
 
 #### While the **_L1_** norm does not result in an NP-hard problem, the **_L1_** norm is convex but is not strictly differentiable due to the kink at **_x = 0_**. Subgradient methods which rely on the subderivative can be used to solve **_L1_** regularized learning problems. However, faster convergence can be achieved through proximal methods.
 
-![alt text](../Pictures/regulatization_8.png)
+![alt text](../Pictures/regularization_8.png)
 
 ### Group sparsity without overlaps
 
@@ -142,7 +142,7 @@
 
 #### In the case of a linear model with non-overlapping known groups, a regularizer can be defined:
 
-![alt text](../Pictures/regulatization_9.png)
+![alt text](../Pictures/regularization_9.png)
 
 #### This can be viewed as inducing a regularizer over the **_L2_** norm over members of each group followed by an **_L1_** norm over groups.
 
@@ -152,9 +152,68 @@
 
 #### If it is desired to preserve the group structure, a new regularizer can be defined:
 
-![alt text](../Pictures/regulatization_10.png)
+![alt text](../Pictures/regularization_10.png)
 
 #### For each **_wg_**, **_w¯g_** is defined as the vector such that the restriction of **_w¯g_** to the group **_g_** equals wg and all other entries of **_w¯g_** are zero. The regularizer finds the optimal disintegration of **_w_** into parts. It can be viewed as duplicating all elements that exist in multiple groups. Learning problems with this regularizer can also be solved with the proximal method with a complication. The proximal operator cannot be computed in closed form, but can be effectively solved iteratively, inducing an inner iteration within the proximal method iteration.
+
+---
+
+## Regularizers for semi-supervised learning
+
+#### When labels are more expensive to gather than input examples, semi-supervised learning can be useful. Regularizers have been designed to guide learning algorithms to learn models that respect the structure of unsupervised training samples. If a symmetric weight matrix **_W_** is given, a regularizer can be defined:
+
+![alt text](../Pictures/regularization_11.png)
+
+![alt text](../Pictures/regularization_12.png)
+
+#### If **_Wij_** encodes the result of some distance metric for points **_xi_** and **_xj_**, it is desirable that **_f(xi)≈f(xj)_**. This regularizer captures this intuition, and is equivalent to:
+
+#### where **_L = D − W_** is the Laplacian matrix of the graph induced by **_W_**.
+
+#### The optimization problem **_min R(f)_**,**_m = u + l_** can be solved analytically if the constraint **_f(xi) = yi_** is applied for all supervised samples. The labeled part of thevector **_f_** is therefore obvious. The unlabeled part of **_f_** is solved for by:
+
+#### The pseudo-inverse can be taken because **_Lul_** has the same range as **_Luu_**.
+
+---
+
+## Regularizers for multitask learning
+
+#### In the case of multitask learning, **_T_** problems are considered simultaneously, each related in some way. The goal is to learn **_T_** functions, ideally borrowing strength from the relatedness of tasks, that have predictive power. This is equivalent to learning the matrix **_W:T×D_**.
+
+### Sparse regularizer on columns
+
+![alt text](../Pictures/regularization_13.png)
+
+#### This regularizer defines an **_L2_** norm on each column and an **_L1_** norm over all columns. It can be solved by proximal methods.
+
+### Nuclear norm regularization
+
+![alt text](../Pictures/regularization_14.png)
+
+#### where **_σ(W)_** is the eigenvalues in the singular value decomposition of **_W_**.
+
+### Mean-constrained regularization
+
+![alt text](../Pictures/regularization_15.png)
+
+#### This regularizer constrains the functions learned for each task to be similar to the overall average of the functions across all tasks. This is useful for expressing prior information that each task is expected to share with each other task. An example is predicting blood iron levels measured at different times of the day, where each task represents an individual.
+
+### Clustered mean-constrained regularization
+
+![alt text](../Pictures/regularization_16.png)
+
+#### where **_I(r)_** is a cluster of tasks.
+
+#### This regularizer is similar to the mean-constrained regularizer, but instead enforces similarity between tasks within the same cluster. This can capture more complex prior information. This technique has been used to predict Netflix recommendations. A cluster would correspond to a group of people who share similar preferences.
+
+### Graph-based similarity
+
+#### More generally than above, similarity between tasks can be defined by a function. The regularizer encourages the model to learn similar functions for similar tasks.
+
+![alt text](../Pictures/regularization_17.png)
+
+#### for a given symmetric similarity matrix **_M_**.
+
 
 ---
 
