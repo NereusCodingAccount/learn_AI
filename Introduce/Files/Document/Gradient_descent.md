@@ -17,8 +17,8 @@
 #### It is possible to guarantee(保證) the convergence to a local minimum under certain assumptions(假設) on the function **_f_** (for example, **_f_** convex(凸面) and **_V f_** Lipschitz) and particular choices of n. Those include the sequence
 
 ![alt text](../Pictures/Gd_equation3.png)
-#### as in the Barzilai-Borwein method,  or a sequence **_n_** satisfying the Wolfe conditions (which can be found by using line search). When the function **_f_** is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
-#### This process is illustrated in the adjacent picture. Here, **_f_** is assumed to be defined on the plane, and that its graph has a bowl shape. The blue curves are the contour lines, that is, the regions on which the value of fis constant. A red arrow originating at a point shows the direction of the negative gradient at that point. Note that the (negative) gradient at a point is orthogonal to the contour line going through that point. We see that gradient descent leads us to the bottom of the bowl, that is, to the point where the value of the function **_f_** is minimal.
+#### as in the Barzilai-Borwein method,  or a sequence **_n_** satisfying the Wolfe conditions(狀態） (which can be found by using line search). When the function **_f_** is convex(凸的）, all local minima(最低點） are also global(全域） minima, so in this case gradient descent can converge(收斂） to the global solution.
+#### This process(過程） is illustrated in the adjacent(鄰近） picture. Here, **_f_** is assumed(認為） to be defined(定義） on the plane, and that its graph(圖形） has a bowl shape. The blue curves(曲線） are the contour(輪廓） lines, that is, the regions(地區） on which the value of fis constant(f常數）. A red arrow originating(發起） at a point shows the direction(方向） of the negative gradient(負梯度） at that point. Note that the (negative) gradient at a point is orthogonal(正交） to the contour(輪廓） line going through that point. We see that gradient descent leads us to the bottom of the bowl, that is, to the point where the value of the function **_f_** is minimal(最低限度）.
 
 ![alt text](../Pictures/Gd_p1.png)
 
