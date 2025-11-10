@@ -102,8 +102,38 @@ layer = MaxPooling2D(pool_size=(2,2))
 - 其中，γ,β會在訓練過程中自動學習，ϵ是個很小的數，防止除以零。
 ![算式](../Pictures/Batch_Norm.png)
 
+### 2. Layer Normalization (LayerNorm)
+- **功能**：對每個樣本的特徵維度做標準化。
+- **特點**：
+  - 不依賴 batch size，適合 RNN/Transformer
+  - 訓練與推理行為一致
+  - 對序列長度變化較穩定
+
+### 3. Instance Normalization
+- **功能**：對每個樣本的每個通道單獨標準化。
+- **用途**：風格轉換、GAN 等影像生成任務。
+
+### 4. Group Normalization
+- **功能**：將通道分組後做標準化。
+- **優點**：
+  - 不受 batch size 影響
+  - 比 LayerNorm 保留更多通道資訊
+
+
 #### 常見位置
 - 通常放在「全連接層」或「卷積層」之後、激活函數之前。
+
+#### 選擇指南：
+ - CNN → BatchNorm
+ - Transformer/RNN → LayerNorm
+ - 小 batch size → LayerNorm/GroupNorm
+ - 影像生成 → InstanceNorm
+
+#### 注意事項：
+ - BatchNorm 要注意 train()/eval() 模式切換
+ - 推理時 batch size=1 可能影響 BatchNorm 效果
+ - 正規化層參數量 = 2 * 特徵數（γ 和 β）
+ 
 ---
 # Dropout (隨機丟棄層)
 - 深度學習中很常用的一種「正則化」技術，目的是防止神經網路過擬合（overfitting）。
