@@ -35,15 +35,15 @@
 
 ![alt text](../Pictures/Gd_equation5.png)
 #### This inequality(不等式） implies(暗示） that the amount(數量） by which we can be sure the function **_f_** is decreased(減少） depends(依賴） on a trade off(權衡） between the two terms(術語） in square brackets(括號）. The first term in square brackets measures the angle between the descent direction and the negative gradient(負梯度）. The second term measures how quickly the gradient changes along the descent(下降） direction.
-#### In principle(原則） inequality(不等式） (1) could be optimized(最佳化） over **_P_**, and n to choose an optimal step size and direction. The problem is that evaluating the second term in square brackets requires evaluating Vf(an - thnPn), and extra gradient evaluations are generally expensive and undesirable. Some ways around this problem are:
-#### - Forgo the benefits of a clever descent direction by setting P, = V f(an), and use line search to find a suitable step-size Yn, such as one that satisfies the Wolfe conditions. A more economic way of choosing learning rates is backtracking line search, a method that has both good theoretical guarantees and experimental results. Note that one does not need to choose Pn to be the gradient; any direction that has positive inner product with the gradient will result in a reduction of the function value (for a sufficiently small value of **_nn_**).
+#### In principle(原則） inequality(不等式） (1) could be optimized(最佳化） over **_P_**, and n to choose an optimal step size and direction. The problem is that evaluating(評估） the second term in square brackets requires evaluating **_Vf(an - thnPn)_**, and extra(額外） gradient evaluations(評估） are generally expensive and undesirable(不理想）. Some ways around this problem are:
+#### - Forgo(放棄） the benefits(益處） of a clever(聰明的） descent direction by setting **_P, = V f(an)_**, and use line search to find a suitable(合適的） step-size **_Yn_**, such as one that satisfies the Wolfe conditions. A more economic(經濟的） way of choosing learning rates(速度） is backtracking(回溯） line search, a method that has both good theoretical(理論） guarantees(保證） and experimental(實驗） results. Note that one does not need to choose **_Pn_** to be the gradient; any direction that has positive inner(內） product with the gradient will result in a reduction(減少） of the function value (for a sufficiently(足夠） small value of **_nn_**).
 
 ![alt text](../Pictures/Gd_equation6.png)
-#### - Assuming that **_f_** is twice-differentiable, use its Hessian **_V² f_** to estimate
-#### Then choose Pn and in by optimising inequality (1).
-#### - Assuming that V f is Lipschitz, use its Lipschitz constant L to bound
+#### - Assuming(認為） that **_f_** is twice-differentiable(二階可微）, use its Hessian **_V² f_** to estimate(估計）
+#### Then choose **_Pn_** and in by optimising inequality (1).
+#### - Assuming that **_V f_** is Lipschitz, use its Lipschitz constant **_L_** to bound(邊界）
 #### Then choose **_Pn_** and **_ŋn_** by optimising inequality(1).
-#### Build a custom model of {        } for **_f_**. Then choose **_Pn_** and **_ŋn_** by optimising inequality (1).
+#### Build a custom(客製化） model of {        } for **_f_**. Then choose **_Pn_** and **_ŋn_** by optimising inequality (1).
 #### - Under stronger assumptions on the function f such as convexity, more advanced techniques may be possible.
 #### Usually by following one of the recipes above, convergence to a local minimum can be guaranteed.
 #### When the function **_f_** is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
